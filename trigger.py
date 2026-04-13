@@ -12,8 +12,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
 
+# Cambia estas líneas al principio del trigger.py
 VENV_PYTHON = str(ROOT / ".venv" / "bin" / "python")
-PYTHON = VENV_PYTHON if Path(VENV_PYTHON).exists() else sys.executable
+assert Path(VENV_PYTHON).exists(), f"❌ No se encuentra el venv en {VENV_PYTHON}"
+PYTHON = VENV_PYTHON
 
 LOG_DIR = ROOT / "output" / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
