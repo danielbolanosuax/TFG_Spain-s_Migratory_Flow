@@ -1,0 +1,73 @@
+[10:24:30] ============================================================
+[10:24:30] 🚀 TRIGGER INICIADO — 2026-04-13 10:24:30
+[10:24:30] 📁 ROOT: /workspaces/TFG_Spain-s_Migratory_Flow
+[10:24:30] 🐍 Python: /workspaces/TFG_Spain-s_Migratory_Flow/.venv/bin/python
+[10:24:30] ============================================================
+[10:24:30] ── PASO 1: Recolección de datos (scheduler job_diario) ──
+[10:24:30] ▶  job_diario (sin scheduler bloqueante)
+[10:26:25] ✅ OK — job_diario (sin scheduler bloqueante)
+[10:26:25] 
+── PASO 2: Ejecutando notebooks ──
+[10:26:25] ▶  02_ambiental.ipynb
+[10:26:37] ✅ OK — 02_ambiental.ipynb
+[10:26:37] ▶  02_economico.ipynb
+[10:26:48] ❌ FALLO — 02_economico.ipynb
+[10:26:48] RAW.rglob("*.json"))[-1]
+with open(ultimo_json) as f:
+    data = json.load(f)
+
+# Ver qué tablas hay y su forma
+resumen = []
+for tabla, registros in data.items():
+    df_tmp = pd.DataFrame(registros)
+    resumen.append({
+        "tabla": tabla,
+        "filas": len(df_tmp),
+        "columnas": list(df_tmp.columns)
+    })
+    
+for r in resumen:
+    print(f"\n📊 {r['tabla']} → {r['filas']} filas")
+    print(f"   Cols: {r['columnas']}")
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[32m/tmp/ipykernel_18029/3518310318.py[39m in [36m?[39m[34m()[39m
+[32m      8[39m 
+[32m      9[39m [38;5;66;03m# Ver qué tablas hay y su forma[39;00m
+[32m     10[39m resumen = []
+[32m     11[39m [38;5;28;01mfor[39;00m tabla, registros [38;5;28;01min[39;00m data.items():
+[32m---> [39m[32m12[39m     df_tmp = pd.DataFrame(registros)
+[32m     13[39m     resumen.append({
+[32m     14[39m         [33m"tabla"[39m: tabla,
+[32m     15[39m         [33m"filas"[39m: len(df_tmp),
+
+[32m/workspaces/TFG_Spain-s_Migratory_Flow/.venv/lib/python3.12/site-packages/pandas/core/frame.py[39m in [36m?[39m[34m(self, data, index, columns, dtype, copy)[39m
+[32m    865[39m                 )
+[32m    866[39m         [38;5;66;03m# For data is scalar[39;00m
+[32m    867[39m         [38;5;28;01melse[39;00m:
+[32m    868[39m             [38;5;28;01mif[39;00m index [38;5;28;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;28;01mor[39;00m columns [38;5;28;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m869[39m                 [38;5;28;01mraise[39;00m ValueError([33m"DataFrame constructor not properly called!"[39m)
+[32m    870[39m 
+[32m    871[39m             index = ensure_index(index)
+[32m    872[39m             columns = ensure_index(columns)
+
+[31mValueError[39m: DataFrame constructor not properly called!
+
+
+[10:26:48] ⚠️  Continuando a pesar del fallo en notebooks/02_limpieza/02_economico.ipynb...
+[10:26:48] ⚠️  Notebook no encontrado, saltando: notebooks/02_limpieza/02_conectividad.ipynb
+[10:26:48] ▶  02_evr.ipynb
+[10:26:55] ✅ OK — 02_evr.ipynb
+[10:26:55] ⚠️  Notebook no encontrado, saltando: notebooks/03_analisis/03_merge_maestro.ipynb
+[10:26:55] ⚠️  Notebook no encontrado, saltando: notebooks/03_analisis/03_correlaciones.ipynb
+[10:26:55] ⚠️  Notebook no encontrado, saltando: notebooks/03_analisis/03_modelos.ipynb
+[10:26:55] ⚠️  Notebook no encontrado, saltando: notebooks/04_dashboard/04_dashboard.ipynb
+[10:26:55] 
+============================================================
+[10:26:55] ⚠️  PIPELINE COMPLETADO CON 1 FALLOS:
+[10:26:55]    ❌ notebooks/02_limpieza/02_economico.ipynb
+[10:26:55] 📋 Log guardado en: /workspaces/TFG_Spain-s_Migratory_Flow/output/logs/trigger_20260413_102430.log
+[10:26:55] ============================================================
