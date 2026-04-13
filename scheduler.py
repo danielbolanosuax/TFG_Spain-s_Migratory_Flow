@@ -1,14 +1,17 @@
 import json, os
 from datetime import datetime
 from apscheduler.schedulers.blocking import BlockingScheduler
-from collectors.economico import collect_economico
-from collectors.ambiental import collect_ambiental
+
+from collectors.economico    import collect_economico
+from collectors.ambiental    import collect_ambiental
 from collectors.conectividad import collect_conectividad
+from collectors.evr          import collect as collect_evr
+
 
 def save_json(categoria: str, datos: dict):
-    fecha = datetime.now().strftime("%d_%m_%Y")
-    anio  = datetime.now().strftime("%Y")
-    mes   = datetime.now().strftime("%m")
+    fecha   = datetime.now().strftime("%d_%m_%Y")
+    anio    = datetime.now().strftime("%Y")
+    mes     = datetime.now().strftime("%m")
     carpeta = f"data/{categoria}/{anio}/{mes}"
     os.makedirs(carpeta, exist_ok=True)
     ruta = f"{carpeta}/{fecha}.json"
@@ -16,17 +19,25 @@ def save_json(categoria: str, datos: dict):
         json.dump(datos, f, ensure_ascii=False, indent=2)
     print(f"  ✅ {ruta}")
 
+
 def job_diario():
     print(f"\n🚀 Pipeline arrancado: {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+
     print("📊 Económico...")
     save_json("economico", collect_economico())
+
     print("🌿 Ambiental...")
     save_json("ambiental", collect_ambiental())
+
     print("📡 Conectividad...")
     save_json("conectividad", collect_conectividad())
+
+    print("🔀 EVR — Flujos migratorios...")
+    save_json("evr", collect_evr())
+
     print("🎉 Pipeline completado.\n")
 
-# --- Lanzar una vez ahora + programar diariamente ---
+
 if __name__ == "__main__":
     job_diario()  # ejecuta inmediatamente al arrancar
     scheduler = BlockingScheduler(timezone="Europe/Madrid")

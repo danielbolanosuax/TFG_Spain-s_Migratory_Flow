@@ -4,6 +4,7 @@ from datetime import datetime
 import urllib3
 urllib3.disable_warnings()
 
+
 def get_cobertura_banda_ancha():
     """
     Informes de cobertura banda ancha - Secretaría de Estado Digitalización (SETID)
@@ -19,29 +20,25 @@ def get_cobertura_banda_ancha():
         "nota": "ZIP con CSV por municipio: %cobertura fibra, 4G, 5G, HFC, VDSL, NGA"
     }
 
+
 def get_cobertura_cnmc():
     """
-    CNMC - Calidad de telecos: velocidad real fibra/4G/5G por operador
-    Tests voluntarios de usuarios, datos abiertos trimestrales
+    CNMC - Calidad de telecos
+    Portal: https://data.cnmc.es/buscador
+    No tiene API pública estable — descarga manual trimestral
     """
-    try:
-        url = "https://calidadtelecos.cnmc.es/datos-abiertos/descargar"
-        r = requests.get(url, timeout=10, verify=False)
-        return {
-            "fuente": "CNMC - Calidad Telecos datos abiertos",
-            "url_portal": "https://calidadtelecos.cnmc.es/datos-abiertos",
-            "timestamp_captura": datetime.now().isoformat(),
-            "status": r.status_code,
-            "nota": "Velocidad real bajada/subida por tecnología (fibra, 4G, 5G) y operador"
-        }
-    except Exception as e:
-        return {
-            "fuente": "CNMC - Calidad Telecos datos abiertos",
-            "url_portal": "https://calidadtelecos.cnmc.es/datos-abiertos",
-            "timestamp_captura": datetime.now().isoformat(),
-            "error": str(e),
-            "nota": "Dominio no accesible desde Codespace. Descargar manualmente."
-        }
+    return {
+        "fuente": "CNMC - Portal Open Data",
+        "url_portal": "https://data.cnmc.es/buscador",
+        "url_datos_gob": "https://datos.gob.es/es/iniciativas/portal-open-data-de-cnmc",
+        "timestamp_captura": datetime.now().isoformat(),
+        "status": "manual",
+        "nota": (
+            "Sin API pública estable. Descarga manual trimestral desde data.cnmc.es → "
+            "Telecomunicaciones → Calidad de Internet. Subir CSV a data/conectividad/cnmc/"
+        )
+    }
+
 
 def collect_conectividad():
     print("  📶 Cobertura banda ancha (SETID)...")
@@ -50,7 +47,7 @@ def collect_conectividad():
 
     print("  📡 Calidad telecos CNMC...")
     cnmc = get_cobertura_cnmc()
-    print(f"  → status {cnmc.get('status', cnmc.get('error', '?'))}")
+    print(f"  → status {cnmc['status']} — {cnmc['url_portal']}")
 
     return {
         "timestamp": datetime.now().isoformat(),
