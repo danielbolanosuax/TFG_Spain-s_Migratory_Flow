@@ -1,0 +1,17 @@
+# Datos crudos — demasiado grandes para GitHub
+data/
+
+# Entorno virtual
+.venv/
+
+# Logs
+output/logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Variables de entorno
+.env

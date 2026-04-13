@@ -1,5 +1,6 @@
 """
-trigger.py — Ejecuta en orden:
+trigger.py — Pipeline completo TFG Spain's Migratory Flow
+Orden: scheduler → 01_exploracion → 02_limpieza → 03_visualizacion
 """
 
 import os
@@ -19,14 +20,20 @@ LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / f"trigger_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
 NOTEBOOKS = [
+    # ── FASE 1: Exploración ───────────────────────────────────
+    "notebooks/01_exploracion/01_economico.ipynb",
+    "notebooks/01_exploracion/01_ambiental.ipynb",
+    "notebooks/01_exploracion/01_conectividad.ipynb",
+    "notebooks/01_exploracion/01_evr.ipynb",
+
+    # ── FASE 2: Limpieza ──────────────────────────────────────
     "notebooks/02_limpieza/02_ambiental.ipynb",
     "notebooks/02_limpieza/02_economico.ipynb",
-    "notebooks/02_limpieza/02_conectividad.ipynb",
+    "notebooks/02_limpieza/02_concectividad.ipynb",   # ← typo original del archivo
     "notebooks/02_limpieza/02_evr.ipynb",
-    "notebooks/03_analisis/03_merge_maestro.ipynb",
-    "notebooks/03_analisis/03_correlaciones.ipynb",
-    "notebooks/03_analisis/03_modelos.ipynb",
-    "notebooks/04_dashboard/04_dashboard.ipynb",
+
+    # ── FASE 3: aún no existe, se saltarán ───────────────────
+    # "notebooks/03_visualizacion/03_merge_maestro.ipynb",
 ]
 
 def log(msg: str):
@@ -44,12 +51,11 @@ def run_step(label: str, cmd: list) -> bool:
         return True
     else:
         log(f"❌ FALLO — {label}")
-        log(result.stderr[-2000:])  # últimas líneas del error
+        log(result.stderr[-2000:])
         return False
 
 def run_scheduler_once():
-    """Importa y ejecuta job_diario() una sola vez sin levantar el BlockingScheduler."""
-    log("── PASO 1: Recolección de datos (scheduler job_diario) ──")
+    log("── PASO 1: Recolección de datos (job_diario) ──")
     script = """
 import sys, os
 sys.path.insert(0, os.getcwd())
@@ -57,9 +63,9 @@ from collectors.economico import collect_economico
 from collectors.ambiental import collect_ambiental
 import json
 from datetime import datetime
+from pathlib import Path
 
 def save_json(categoria, datos):
-    from pathlib import Path
     fecha = datetime.now().strftime("%d_%m_%Y")
     anio  = datetime.now().strftime("%Y")
     mes   = datetime.now().strftime("%m")
@@ -85,7 +91,7 @@ def run_notebook(nb_path: str) -> bool:
     nb = ROOT / nb_path
     if not nb.exists():
         log(f"⚠️  Notebook no encontrado, saltando: {nb_path}")
-        return True  # no bloquear el pipeline
+        return True
     return run_step(
         nb.name,
         [
@@ -109,19 +115,23 @@ def main():
     # ── PASO 1: Recolección ───────────────────────────────────
     ok = run_scheduler_once()
     if not ok:
-        log("🛑 Fallo en recolección. Abortando.")
+        log("🛑 Fallo en recolección. Abortando pipeline.")
         sys.exit(1)
 
-    # ── PASO 2: Notebooks en orden ───────────────────────────
-    log("\n── PASO 2: Ejecutando notebooks ──")
+    # ── PASO 2+3: Notebooks en orden ─────────────────────────
+    log("\n── PASO 2/3: Ejecutando notebooks ──")
     failed = []
     for nb in NOTEBOOKS:
         ok = run_notebook(nb)
         if not ok:
             failed.append(nb)
-            log(f"⚠️  Continuando a pesar del fallo en {nb}...")
+            # Fase 1 (exploracion) y Fase 2 (limpieza) son bloqueantes entre sí
+            # Si falla un 02_, no tiene sentido ejecutar el 03_
+            if "03_visualizacion" not in nb and not ok:
+                log(f"🛑 Fallo crítico en {nb}. Abortando resto del pipeline.")
+                break
 
-    # ── Resumen final ─────────────────────────────────────────
+    # ── Resumen ───────────────────────────────────────────────
     log("\n" + "=" * 60)
     if not failed:
         log("🎉 PIPELINE COMPLETADO SIN ERRORES")
@@ -129,7 +139,7 @@ def main():
         log(f"⚠️  PIPELINE COMPLETADO CON {len(failed)} FALLOS:")
         for f in failed:
             log(f"   ❌ {f}")
-    log(f"📋 Log guardado en: {LOG_FILE}")
+    log(f"📋 Log: {LOG_FILE}")
     log("=" * 60)
 
 if __name__ == "__main__":
