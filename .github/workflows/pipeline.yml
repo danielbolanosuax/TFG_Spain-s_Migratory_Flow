@@ -24,6 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
+    env:
+      AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+      WAQI_TOKEN:    ${{ secrets.WAQI_TOKEN }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -43,10 +47,6 @@ jobs:
           mkdir -p output/executed_notebooks
 
       - name: Run full pipeline (ingest + merge)
-        env:
-          # Secretos del INE/AEMET que ya tienes en .env
-          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
-          WAQI_API_KEY:  ${{ secrets.WAQI_API_KEY }}
         run: python trigger.py
 
       - name: Run insights notebooks (05–09)
