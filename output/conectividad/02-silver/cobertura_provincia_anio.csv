@@ -1,0 +1,625 @@
+Comunidad Autónoma,Provincia,año,cob_100mbps
+Castilla-La Mancha,Albacete,2013,0.5259287182253989
+Castilla-La Mancha,Albacete,2014,0.5296832078800676
+Castilla-La Mancha,Albacete,2015,0.5375513492782533
+Castilla-La Mancha,Albacete,2016,0.5367443313014003
+Castilla-La Mancha,Albacete,2017,0.6216087636167863
+Castilla-La Mancha,Albacete,2018,0.7469870485565688
+Castilla-La Mancha,Albacete,2019,0.8850034964302771
+Castilla-La Mancha,Albacete,2020,0.9207787963029151
+Castilla-La Mancha,Albacete,2021,0.8754158964879852
+Castilla-La Mancha,Albacete,2022,0.9006563181878587
+Castilla-La Mancha,Albacete,2023,0.9251534117195206
+Castilla-La Mancha,Albacete,2024,0.9297568539991462
+Comunitat Valenciana,Alicante/Alacant,2013,0.5088916439626128
+Comunitat Valenciana,Alicante/Alacant,2014,0.5234996632067899
+Comunitat Valenciana,Alicante/Alacant,2015,0.5927499121193431
+Comunitat Valenciana,Alicante/Alacant,2016,0.6112854876411544
+Comunitat Valenciana,Alicante/Alacant,2017,0.7069838892371395
+Comunitat Valenciana,Alicante/Alacant,2018,0.7977634862392313
+Comunitat Valenciana,Alicante/Alacant,2019,0.8462530017968646
+Comunitat Valenciana,Alicante/Alacant,2020,0.9087873275148888
+Comunitat Valenciana,Alicante/Alacant,2021,0.883214201158043
+Comunitat Valenciana,Alicante/Alacant,2022,0.9294347388906182
+Comunitat Valenciana,Alicante/Alacant,2023,0.9459310114500196
+Comunitat Valenciana,Alicante/Alacant,2024,0.9546456516845275
+Andalucía,Almería,2013,0.2991602004680438
+Andalucía,Almería,2014,0.2715176392981367
+Andalucía,Almería,2015,0.39837488181006164
+Andalucía,Almería,2016,0.4525381337582865
+Andalucía,Almería,2017,0.5644888270837365
+Andalucía,Almería,2018,0.6512600148821123
+Andalucía,Almería,2019,0.6784424954986863
+Andalucía,Almería,2020,0.7196700731307859
+Andalucía,Almería,2021,0.8575419606735142
+Andalucía,Almería,2022,0.8828112732619278
+Andalucía,Almería,2023,0.9254560506593853
+Andalucía,Almería,2024,0.9319736096201859
+Pais Vasco,Araba/Álava,2013,0.7378477434443202
+Pais Vasco,Araba/Álava,2014,0.750794103635152
+Pais Vasco,Araba/Álava,2015,0.7749343461720208
+Pais Vasco,Araba/Álava,2016,0.8345363392528087
+Pais Vasco,Araba/Álava,2017,0.8480139145425828
+Pais Vasco,Araba/Álava,2018,0.8542730823765242
+Pais Vasco,Araba/Álava,2019,0.90412699367434
+Pais Vasco,Araba/Álava,2020,0.9170071666875091
+Pais Vasco,Araba/Álava,2021,0.9585483410219475
+Pais Vasco,Araba/Álava,2022,0.9734770120112016
+Pais Vasco,Araba/Álava,2023,0.9682576961988727
+Pais Vasco,Araba/Álava,2024,0.9705342022272888
+Asturias (Principado De),Asturias,2013,0.7920065920606196
+Asturias (Principado De),Asturias,2014,0.7909476759421481
+Asturias (Principado De),Asturias,2015,0.7932516319550018
+Asturias (Principado De),Asturias,2016,0.7942286577902314
+Asturias (Principado De),Asturias,2017,0.7984263232401644
+Asturias (Principado De),Asturias,2018,0.8034189947410975
+Asturias (Principado De),Asturias,2019,0.7991844669389556
+Asturias (Principado De),Asturias,2020,0.824247212543843
+Asturias (Principado De),Asturias,2021,0.774914968082222
+Asturias (Principado De),Asturias,2022,0.7910558965241195
+Asturias (Principado De),Asturias,2023,0.8373979385734046
+Asturias (Principado De),Asturias,2024,0.8786729409322566
+Extremadura,Badajoz,2013,0.2692866718792271
+Extremadura,Badajoz,2014,0.2744703072664646
+Extremadura,Badajoz,2015,0.3476668156883008
+Extremadura,Badajoz,2016,0.399083698613144
+Extremadura,Badajoz,2017,0.522470352533038
+Extremadura,Badajoz,2018,0.5977602154126407
+Extremadura,Badajoz,2019,0.707888685143362
+Extremadura,Badajoz,2020,0.801551223768433
+Extremadura,Badajoz,2021,0.8677702704505019
+Extremadura,Badajoz,2022,0.8628737537318351
+Extremadura,Badajoz,2023,0.9155718057664732
+Extremadura,Badajoz,2024,0.9280552017992791
+Balears (Illes),"Balears, Illes",2013,0.4568252956209914
+Balears (Illes),"Balears, Illes",2014,0.44431620595725685
+Balears (Illes),"Balears, Illes",2015,0.5912452666965127
+Balears (Illes),"Balears, Illes",2016,0.7376208298260575
+Balears (Illes),"Balears, Illes",2017,0.8194025393604831
+Balears (Illes),"Balears, Illes",2018,0.855723747210892
+Balears (Illes),"Balears, Illes",2019,0.8401138993462699
+Balears (Illes),"Balears, Illes",2020,0.9036946657181962
+Balears (Illes),"Balears, Illes",2021,0.9265832137427359
+Balears (Illes),"Balears, Illes",2022,0.9155367916443309
+Balears (Illes),"Balears, Illes",2023,0.9220641455443184
+Balears (Illes),"Balears, Illes",2024,0.9545811203370148
+Cataluña,Barcelona,2013,0.5815046526119363
+Cataluña,Barcelona,2014,0.7404480498530007
+Cataluña,Barcelona,2015,0.8042088318728132
+Cataluña,Barcelona,2016,0.9051757856861103
+Cataluña,Barcelona,2017,0.9375206180216401
+Cataluña,Barcelona,2018,0.9561651826524714
+Cataluña,Barcelona,2019,0.9562459136398503
+Cataluña,Barcelona,2020,0.955473385889069
+Cataluña,Barcelona,2021,0.9840846709723721
+Cataluña,Barcelona,2022,0.9775829258065556
+Cataluña,Barcelona,2023,0.9858174545697913
+Cataluña,Barcelona,2024,0.9883198111488186
+Pais Vasco,Bizkaia,2013,0.9128494950331717
+Pais Vasco,Bizkaia,2014,0.9109631349341268
+Pais Vasco,Bizkaia,2015,0.9228202604630495
+Pais Vasco,Bizkaia,2016,0.9302947548426951
+Pais Vasco,Bizkaia,2017,0.9451385078796062
+Pais Vasco,Bizkaia,2018,0.9548246338002719
+Pais Vasco,Bizkaia,2019,0.9665851450620573
+Pais Vasco,Bizkaia,2020,0.9692700822638916
+Pais Vasco,Bizkaia,2021,0.9418266837036404
+Pais Vasco,Bizkaia,2022,0.9471397017604661
+Pais Vasco,Bizkaia,2023,0.9693250978119113
+Pais Vasco,Bizkaia,2024,0.9765772689128177
+Castilla Y León,Burgos,2013,0.6328663322072173
+Castilla Y León,Burgos,2014,0.6330150016814411
+Castilla Y León,Burgos,2015,0.6514179622629034
+Castilla Y León,Burgos,2016,0.666084897604048
+Castilla Y León,Burgos,2017,0.6876654921086793
+Castilla Y León,Burgos,2018,0.7039008707042904
+Castilla Y León,Burgos,2019,0.7257063661333346
+Castilla Y León,Burgos,2020,0.7604175773030031
+Castilla Y León,Burgos,2021,0.7180412796233404
+Castilla Y León,Burgos,2022,0.7480658142884721
+Castilla Y León,Burgos,2023,0.8140836880595791
+Castilla Y León,Burgos,2024,0.8225852050799414
+Cantabria,Cantabria,2013,0.6255120898499489
+Cantabria,Cantabria,2014,0.6274574560233662
+Cantabria,Cantabria,2015,0.6354429529139237
+Cantabria,Cantabria,2016,0.6588661937537803
+Cantabria,Cantabria,2017,0.6833379190752589
+Cantabria,Cantabria,2018,0.7515347198746338
+Cantabria,Cantabria,2019,0.7554729717039936
+Cantabria,Cantabria,2020,0.7699504977219006
+Cantabria,Cantabria,2021,0.9189202350420413
+Cantabria,Cantabria,2022,0.9445692206160986
+Cantabria,Cantabria,2023,0.9644762941721826
+Cantabria,Cantabria,2024,0.9753706257541803
+Comunitat Valenciana,Castellón/Castelló,2013,0.6563366554025485
+Comunitat Valenciana,Castellón/Castelló,2014,0.6568044816728218
+Comunitat Valenciana,Castellón/Castelló,2015,0.6596681955936123
+Comunitat Valenciana,Castellón/Castelló,2016,0.6747979551265632
+Comunitat Valenciana,Castellón/Castelló,2017,0.7101535772890767
+Comunitat Valenciana,Castellón/Castelló,2018,0.7901861264747421
+Comunitat Valenciana,Castellón/Castelló,2019,0.8197025678865058
+Comunitat Valenciana,Castellón/Castelló,2020,0.9031362417188123
+Comunitat Valenciana,Castellón/Castelló,2021,0.8644639447416236
+Comunitat Valenciana,Castellón/Castelló,2022,0.8986490456540309
+Comunitat Valenciana,Castellón/Castelló,2023,0.9369320196953576
+Comunitat Valenciana,Castellón/Castelló,2024,0.9475333117269691
+Ciudad Autónoma De Ceuta,Ceuta,2013,0.4385864176473111
+Ciudad Autónoma De Ceuta,Ceuta,2014,0.8705839882462795
+Ciudad Autónoma De Ceuta,Ceuta,2015,0.8625608809784472
+Ciudad Autónoma De Ceuta,Ceuta,2016,0.8488776344379331
+Ciudad Autónoma De Ceuta,Ceuta,2017,0.868763236668678
+Ciudad Autónoma De Ceuta,Ceuta,2018,0.8572370202097482
+Ciudad Autónoma De Ceuta,Ceuta,2019,0.9134301607934346
+Ciudad Autónoma De Ceuta,Ceuta,2020,0.9278171858216481
+Ciudad Autónoma De Ceuta,Ceuta,2021,0.9928216685447185
+Ciudad Autónoma De Ceuta,Ceuta,2022,0.993236873386072
+Ciudad Autónoma De Ceuta,Ceuta,2023,0.9929654779815394
+Ciudad Autónoma De Ceuta,Ceuta,2024,0.9617501821419898
+Castilla-La Mancha,Ciudad Real,2013,0.29573709467737447
+Castilla-La Mancha,Ciudad Real,2014,0.3362153318983823
+Castilla-La Mancha,Ciudad Real,2015,0.3482823744151128
+Castilla-La Mancha,Ciudad Real,2016,0.4019070518117511
+Castilla-La Mancha,Ciudad Real,2017,0.5230104797626793
+Castilla-La Mancha,Ciudad Real,2018,0.6482075602330951
+Castilla-La Mancha,Ciudad Real,2019,0.7084700261575126
+Castilla-La Mancha,Ciudad Real,2020,0.8602931099477978
+Castilla-La Mancha,Ciudad Real,2021,0.8805283566642698
+Castilla-La Mancha,Ciudad Real,2022,0.872525564344974
+Castilla-La Mancha,Ciudad Real,2023,0.9277040242203408
+Castilla-La Mancha,Ciudad Real,2024,0.9354515251382083
+Galicia,"Coruña, A",2013,0.6222976263322656
+Galicia,"Coruña, A",2014,0.6237094093246265
+Galicia,"Coruña, A",2015,0.6298488609912569
+Galicia,"Coruña, A",2016,0.638878784329119
+Galicia,"Coruña, A",2017,0.6497509771611915
+Galicia,"Coruña, A",2018,0.6694663636012278
+Galicia,"Coruña, A",2019,0.7066062104334424
+Galicia,"Coruña, A",2020,0.7560025262754797
+Galicia,"Coruña, A",2021,0.8269501296187702
+Galicia,"Coruña, A",2022,0.8312748336081878
+Galicia,"Coruña, A",2023,0.8813252676846766
+Galicia,"Coruña, A",2024,0.9115602263540824
+Castilla-La Mancha,Cuenca,2013,0.2570452739228656
+Castilla-La Mancha,Cuenca,2014,0.2570452739228656
+Castilla-La Mancha,Cuenca,2015,0.2610267445349758
+Castilla-La Mancha,Cuenca,2016,0.26192740886734023
+Castilla-La Mancha,Cuenca,2017,0.33528560004105223
+Castilla-La Mancha,Cuenca,2018,0.5547168397591097
+Castilla-La Mancha,Cuenca,2019,0.6520370125477875
+Castilla-La Mancha,Cuenca,2020,0.7688127138092342
+Castilla-La Mancha,Cuenca,2021,0.750598959485685
+Castilla-La Mancha,Cuenca,2022,0.7911704133789886
+Castilla-La Mancha,Cuenca,2023,0.8874076788455828
+Castilla-La Mancha,Cuenca,2024,0.8880734986969883
+Extremadura,Cáceres,2013,0.23733965191320006
+Extremadura,Cáceres,2014,0.25033303965561227
+Extremadura,Cáceres,2015,0.29361298913358586
+Extremadura,Cáceres,2016,0.3359224960459309
+Extremadura,Cáceres,2017,0.4238111888863281
+Extremadura,Cáceres,2018,0.48811675699823226
+Extremadura,Cáceres,2019,0.5342111755737994
+Extremadura,Cáceres,2020,0.6888011994163247
+Extremadura,Cáceres,2021,0.7979230620800954
+Extremadura,Cáceres,2022,0.821614996443254
+Extremadura,Cáceres,2023,0.8936187269520602
+Extremadura,Cáceres,2024,0.9060460782711783
+Andalucía,Cádiz,2013,0.6726156892863626
+Andalucía,Cádiz,2014,0.684217162273499
+Andalucía,Cádiz,2015,0.6999874115333765
+Andalucía,Cádiz,2016,0.7115890633946375
+Andalucía,Cádiz,2017,0.7831340028705953
+Andalucía,Cádiz,2018,0.8273072347442948
+Andalucía,Cádiz,2019,0.8403734513396872
+Andalucía,Cádiz,2020,0.8663370997714555
+Andalucía,Cádiz,2021,0.9221547792098987
+Andalucía,Cádiz,2022,0.9231712827405761
+Andalucía,Cádiz,2023,0.9564916316712363
+Andalucía,Cádiz,2024,0.9700367196256606
+Andalucía,Córdoba,2013,0.44051899514499854
+Andalucía,Córdoba,2014,0.5206271958562751
+Andalucía,Córdoba,2015,0.5494255873752609
+Andalucía,Córdoba,2016,0.5710728561260309
+Andalucía,Córdoba,2017,0.626952847532977
+Andalucía,Córdoba,2018,0.7273724621616321
+Andalucía,Córdoba,2019,0.8754309647727166
+Andalucía,Córdoba,2020,0.9055121785457771
+Andalucía,Córdoba,2021,0.889992616443257
+Andalucía,Córdoba,2022,0.8790652502338073
+Andalucía,Córdoba,2023,0.922641315338507
+Andalucía,Córdoba,2024,0.93233219692621
+Pais Vasco,Gipuzkoa,2013,0.8266708873266987
+Pais Vasco,Gipuzkoa,2014,0.8321120908450478
+Pais Vasco,Gipuzkoa,2015,0.8483317161201352
+Pais Vasco,Gipuzkoa,2016,0.9327943823641488
+Pais Vasco,Gipuzkoa,2017,0.9621807801951556
+Pais Vasco,Gipuzkoa,2018,0.9674356242392198
+Pais Vasco,Gipuzkoa,2019,0.9757907999353695
+Pais Vasco,Gipuzkoa,2020,0.9601706523977303
+Pais Vasco,Gipuzkoa,2021,0.9395430513696877
+Pais Vasco,Gipuzkoa,2022,0.9520057134786397
+Pais Vasco,Gipuzkoa,2023,0.964455082252579
+Pais Vasco,Gipuzkoa,2024,0.9733229993728627
+Cataluña,Girona,2013,0.14701015456434882
+Cataluña,Girona,2014,0.25520596694288245
+Cataluña,Girona,2015,0.34072325149720833
+Cataluña,Girona,2016,0.400035330135347
+Cataluña,Girona,2017,0.5379857022564865
+Cataluña,Girona,2018,0.583831559075782
+Cataluña,Girona,2019,0.6038651673426348
+Cataluña,Girona,2020,0.7183704273759254
+Cataluña,Girona,2021,0.8145259130065459
+Cataluña,Girona,2022,0.902774938773936
+Cataluña,Girona,2023,0.9476603356760931
+Cataluña,Girona,2024,0.9686719121482928
+Andalucía,Granada,2013,0.3111982232279426
+Andalucía,Granada,2014,0.3603416159744601
+Andalucía,Granada,2015,0.45777195800899
+Andalucía,Granada,2016,0.5485244102650384
+Andalucía,Granada,2017,0.6002364002168297
+Andalucía,Granada,2018,0.6656550027159284
+Andalucía,Granada,2019,0.7202433179610414
+Andalucía,Granada,2020,0.8081724213509597
+Andalucía,Granada,2021,0.881712813908564
+Andalucía,Granada,2022,0.8969070308180258
+Andalucía,Granada,2023,0.9369588275349645
+Andalucía,Granada,2024,0.9376382244601276
+Castilla-La Mancha,Guadalajara,2013,0.2999725107586685
+Castilla-La Mancha,Guadalajara,2014,0.30029724213804265
+Castilla-La Mancha,Guadalajara,2015,0.39008087544335585
+Castilla-La Mancha,Guadalajara,2016,0.4742091520160079
+Castilla-La Mancha,Guadalajara,2017,0.5784034267523065
+Castilla-La Mancha,Guadalajara,2018,0.6271697875557862
+Castilla-La Mancha,Guadalajara,2019,0.6904234494363762
+Castilla-La Mancha,Guadalajara,2020,0.7646066197633702
+Castilla-La Mancha,Guadalajara,2021,0.7325526983655112
+Castilla-La Mancha,Guadalajara,2022,0.7852254197819697
+Castilla-La Mancha,Guadalajara,2023,0.833756484055243
+Castilla-La Mancha,Guadalajara,2024,0.8445316411607201
+Andalucía,Huelva,2013,0.3680496628904001
+Andalucía,Huelva,2014,0.40962389727514326
+Andalucía,Huelva,2015,0.40755408232808027
+Andalucía,Huelva,2016,0.41388718911017774
+Andalucía,Huelva,2017,0.5615338237939906
+Andalucía,Huelva,2018,0.6193405068489242
+Andalucía,Huelva,2019,0.7006916933406897
+Andalucía,Huelva,2020,0.7972839312998616
+Andalucía,Huelva,2021,0.8377418416727389
+Andalucía,Huelva,2022,0.8765654198207329
+Andalucía,Huelva,2023,0.93080559187368
+Andalucía,Huelva,2024,0.950143896523848
+Aragón,Huesca,2013,0.23389588811749926
+Aragón,Huesca,2014,0.23484937540385195
+Aragón,Huesca,2015,0.2630960173118491
+Aragón,Huesca,2016,0.297846716031182
+Aragón,Huesca,2017,0.4519120221977225
+Aragón,Huesca,2018,0.5993815740146938
+Aragón,Huesca,2019,0.714549039349393
+Aragón,Huesca,2020,0.7855133786456792
+Aragón,Huesca,2021,0.7055941100446524
+Aragón,Huesca,2022,0.6320141477870185
+Aragón,Huesca,2023,0.8379632711100354
+Aragón,Huesca,2024,0.8186776599351058
+Andalucía,Jaén,2013,0.2601276201834406
+Andalucía,Jaén,2014,0.31444556487816655
+Andalucía,Jaén,2015,0.3540021053469678
+Andalucía,Jaén,2016,0.3796021146998558
+Andalucía,Jaén,2017,0.5628124119183255
+Andalucía,Jaén,2018,0.6950898271808418
+Andalucía,Jaén,2019,0.8198946362811709
+Andalucía,Jaén,2020,0.9082566837301935
+Andalucía,Jaén,2021,0.8718963069180268
+Andalucía,Jaén,2022,0.8946180937706362
+Andalucía,Jaén,2023,0.9242737080059984
+Andalucía,Jaén,2024,0.913780315434457
+Castilla Y León,León,2013,0.49186218776234375
+Castilla Y León,León,2014,0.49296491640897666
+Castilla Y León,León,2015,0.4949413389053559
+Castilla Y León,León,2016,0.5249824875645498
+Castilla Y León,León,2017,0.578837664999722
+Castilla Y León,León,2018,0.6209267433576076
+Castilla Y León,León,2019,0.6393231449096802
+Castilla Y León,León,2020,0.7181507795245791
+Castilla Y León,León,2021,0.6658604400861037
+Castilla Y León,León,2022,0.7374784722776109
+Castilla Y León,León,2023,0.8367138749358691
+Castilla Y León,León,2024,0.8510036249043138
+Cataluña,Lleida,2013,0.28786070683829573
+Cataluña,Lleida,2014,0.28823829230924447
+Cataluña,Lleida,2015,0.38130860899428
+Cataluña,Lleida,2016,0.4389098932833559
+Cataluña,Lleida,2017,0.573360495890079
+Cataluña,Lleida,2018,0.6787826036315303
+Cataluña,Lleida,2019,0.6866090544913366
+Cataluña,Lleida,2020,0.7467992369509941
+Cataluña,Lleida,2021,0.7914798300859274
+Cataluña,Lleida,2022,0.8541316110726187
+Cataluña,Lleida,2023,0.9166278996668134
+Cataluña,Lleida,2024,0.9115883343571485
+Galicia,Lugo,2013,0.49321949010826
+Galicia,Lugo,2014,0.495844209269847
+Galicia,Lugo,2015,0.49962575159999706
+Galicia,Lugo,2016,0.4994653377006639
+Galicia,Lugo,2017,0.5075879602960074
+Galicia,Lugo,2018,0.513924002521898
+Galicia,Lugo,2019,0.5603363368679026
+Galicia,Lugo,2020,0.6040087313391042
+Galicia,Lugo,2021,0.6135107049649778
+Galicia,Lugo,2022,0.6300609094220276
+Galicia,Lugo,2023,0.697365148913494
+Galicia,Lugo,2024,0.7612703502031565
+Madrid (Comunidad De),Madrid,2013,0.8284672935617249
+Madrid (Comunidad De),Madrid,2014,0.9008912144036685
+Madrid (Comunidad De),Madrid,2015,0.9311720017526467
+Madrid (Comunidad De),Madrid,2016,0.9470792825499609
+Madrid (Comunidad De),Madrid,2017,0.961400911145189
+Madrid (Comunidad De),Madrid,2018,0.9712895859182725
+Madrid (Comunidad De),Madrid,2019,0.972985433840938
+Madrid (Comunidad De),Madrid,2020,0.9685343601093259
+Madrid (Comunidad De),Madrid,2021,0.9841177102172345
+Madrid (Comunidad De),Madrid,2022,0.9871979313295672
+Madrid (Comunidad De),Madrid,2023,0.9897588715596236
+Madrid (Comunidad De),Madrid,2024,0.9909659646782883
+Ciudad Autónoma De Melilla,Melilla,2013,0.8339441652071964
+Ciudad Autónoma De Melilla,Melilla,2014,0.8675584660988687
+Ciudad Autónoma De Melilla,Melilla,2015,0.9578245718746924
+Ciudad Autónoma De Melilla,Melilla,2016,1.0
+Ciudad Autónoma De Melilla,Melilla,2017,1.0
+Ciudad Autónoma De Melilla,Melilla,2018,1.0
+Ciudad Autónoma De Melilla,Melilla,2019,1.0
+Ciudad Autónoma De Melilla,Melilla,2020,1.0
+Ciudad Autónoma De Melilla,Melilla,2021,0.995050485052465
+Ciudad Autónoma De Melilla,Melilla,2022,0.9981369352585002
+Ciudad Autónoma De Melilla,Melilla,2023,0.9886706948640483
+Ciudad Autónoma De Melilla,Melilla,2024,0.9827836780324204
+Murcia (Región De),Murcia,2013,0.5395560397217767
+Murcia (Región De),Murcia,2014,0.6201585776238736
+Murcia (Región De),Murcia,2015,0.6539331481534437
+Murcia (Región De),Murcia,2016,0.6651929857604667
+Murcia (Región De),Murcia,2017,0.7074013892659327
+Murcia (Región De),Murcia,2018,0.7828865659209654
+Murcia (Región De),Murcia,2019,0.8353498250716804
+Murcia (Región De),Murcia,2020,0.8693875926625886
+Murcia (Región De),Murcia,2021,0.882270049628955
+Murcia (Región De),Murcia,2022,0.9107246453246137
+Murcia (Región De),Murcia,2023,0.9231431099938752
+Murcia (Región De),Murcia,2024,0.9426783276931409
+Andalucía,Málaga,2013,0.29800119323129587
+Andalucía,Málaga,2014,0.4168358128620444
+Andalucía,Málaga,2015,0.5729645166235494
+Andalucía,Málaga,2016,0.6584911364839944
+Andalucía,Málaga,2017,0.8004405555705216
+Andalucía,Málaga,2018,0.837298084913394
+Andalucía,Málaga,2019,0.8271644984960781
+Andalucía,Málaga,2020,0.9388286949783302
+Andalucía,Málaga,2021,0.9334235416180706
+Andalucía,Málaga,2022,0.9256018696869301
+Andalucía,Málaga,2023,0.9361343212663581
+Andalucía,Málaga,2024,0.953567489282698
+Navarra (Comunidad Foral),Navarra,2013,0.602303282866383
+Navarra (Comunidad Foral),Navarra,2014,0.6820177268237051
+Navarra (Comunidad Foral),Navarra,2015,0.692282409778815
+Navarra (Comunidad Foral),Navarra,2016,0.7133079725359417
+Navarra (Comunidad Foral),Navarra,2017,0.7854123534408314
+Navarra (Comunidad Foral),Navarra,2018,0.8006208015016392
+Navarra (Comunidad Foral),Navarra,2019,0.8115937285478595
+Navarra (Comunidad Foral),Navarra,2020,0.7980943506546281
+Navarra (Comunidad Foral),Navarra,2021,0.854854036179846
+Navarra (Comunidad Foral),Navarra,2022,0.91104685327298
+Navarra (Comunidad Foral),Navarra,2023,0.9305555555555556
+Navarra (Comunidad Foral),Navarra,2024,0.9388142810350475
+Galicia,Ourense,2013,0.48886416416661194
+Galicia,Ourense,2014,0.49095607911414685
+Galicia,Ourense,2015,0.49889484140854196
+Galicia,Ourense,2016,0.5064693310273111
+Galicia,Ourense,2017,0.5254330346509841
+Galicia,Ourense,2018,0.5364971179095387
+Galicia,Ourense,2019,0.5681177406002158
+Galicia,Ourense,2020,0.6595189526709234
+Galicia,Ourense,2021,0.7057557565050753
+Galicia,Ourense,2022,0.722896979587142
+Galicia,Ourense,2023,0.751007113440659
+Galicia,Ourense,2024,0.7096427662409606
+Castilla Y León,Palencia,2013,0.4742149739797843
+Castilla Y León,Palencia,2014,0.4742149739797843
+Castilla Y León,Palencia,2015,0.4752341210784821
+Castilla Y León,Palencia,2016,0.48285897931710475
+Castilla Y León,Palencia,2017,0.6101675914798234
+Castilla Y León,Palencia,2018,0.6429519993244152
+Castilla Y León,Palencia,2019,0.6677152871975421
+Castilla Y León,Palencia,2020,0.7392092929492418
+Castilla Y León,Palencia,2021,0.6854218345616878
+Castilla Y León,Palencia,2022,0.7316593422171818
+Castilla Y León,Palencia,2023,0.8477769135173314
+Castilla Y León,Palencia,2024,0.9281914418837138
+Canarias,"Palmas, Las",2013,0.40913413145542177
+Canarias,"Palmas, Las",2014,0.44422957588577994
+Canarias,"Palmas, Las",2015,0.5365335426080013
+Canarias,"Palmas, Las",2016,0.6394451790617426
+Canarias,"Palmas, Las",2017,0.6771689459116038
+Canarias,"Palmas, Las",2018,0.7590140950004388
+Canarias,"Palmas, Las",2019,0.812415910245912
+Canarias,"Palmas, Las",2020,0.8542704241160484
+Canarias,"Palmas, Las",2021,0.9293445115583515
+Canarias,"Palmas, Las",2022,0.9302471243582465
+Canarias,"Palmas, Las",2023,0.936471847826761
+Canarias,"Palmas, Las",2024,0.9351396707643322
+Galicia,Pontevedra,2013,0.49913472014753285
+Galicia,Pontevedra,2014,0.49909448829093095
+Galicia,Pontevedra,2015,0.521407604855858
+Galicia,Pontevedra,2016,0.5634626286966333
+Galicia,Pontevedra,2017,0.5747876466272258
+Galicia,Pontevedra,2018,0.6145633719147914
+Galicia,Pontevedra,2019,0.6762396052286058
+Galicia,Pontevedra,2020,0.7445880250542144
+Galicia,Pontevedra,2021,0.8167431565392156
+Galicia,Pontevedra,2022,0.8188194289122493
+Galicia,Pontevedra,2023,0.8842666754067198
+Galicia,Pontevedra,2024,0.8994382943829439
+Rioja (La),"Rioja, La",2013,0.6509278474837563
+Rioja (La),"Rioja, La",2014,0.6922413312687368
+Rioja (La),"Rioja, La",2015,0.711646963102278
+Rioja (La),"Rioja, La",2016,0.717226135559575
+Rioja (La),"Rioja, La",2017,0.7616505970896126
+Rioja (La),"Rioja, La",2018,0.8640167999472637
+Rioja (La),"Rioja, La",2019,0.8561820483821387
+Rioja (La),"Rioja, La",2020,0.9072451137475238
+Rioja (La),"Rioja, La",2021,0.9160130093744021
+Rioja (La),"Rioja, La",2022,0.9253381075653836
+Rioja (La),"Rioja, La",2023,0.9393418191590726
+Rioja (La),"Rioja, La",2024,0.9361425102162231
+Castilla Y León,Salamanca,2013,0.5552538317649771
+Castilla Y León,Salamanca,2014,0.5735502625999327
+Castilla Y León,Salamanca,2015,0.5733394309445831
+Castilla Y León,Salamanca,2016,0.5935377282691814
+Castilla Y León,Salamanca,2017,0.6314951372055876
+Castilla Y León,Salamanca,2018,0.6568725342799522
+Castilla Y León,Salamanca,2019,0.6733039190623054
+Castilla Y León,Salamanca,2020,0.7265201799541001
+Castilla Y León,Salamanca,2021,0.6623322377719741
+Castilla Y León,Salamanca,2022,0.688663735583379
+Castilla Y León,Salamanca,2023,0.7834509705066801
+Castilla Y León,Salamanca,2024,0.852069045072254
+Canarias,Santa Cruz De Tenerife,2013,0.31805978555093
+Canarias,Santa Cruz De Tenerife,2014,0.3325656816621253
+Canarias,Santa Cruz De Tenerife,2015,0.44251134404572356
+Canarias,Santa Cruz De Tenerife,2016,0.5204068098848029
+Canarias,Santa Cruz De Tenerife,2017,0.5995203437354744
+Canarias,Santa Cruz De Tenerife,2018,0.7322247617195279
+Canarias,Santa Cruz De Tenerife,2019,0.7576662769261315
+Canarias,Santa Cruz De Tenerife,2020,0.8356774601451528
+Canarias,Santa Cruz De Tenerife,2021,0.9270939328574085
+Canarias,Santa Cruz De Tenerife,2022,0.9412328378283125
+Canarias,Santa Cruz De Tenerife,2023,0.9195895570441609
+Canarias,Santa Cruz De Tenerife,2024,0.9436263107570667
+Castilla Y León,Segovia,2013,0.28819096398332317
+Castilla Y León,Segovia,2014,0.2909310996559438
+Castilla Y León,Segovia,2015,0.2952477567582863
+Castilla Y León,Segovia,2016,0.32952976151521035
+Castilla Y León,Segovia,2017,0.4261166292428053
+Castilla Y León,Segovia,2018,0.5083248642216979
+Castilla Y León,Segovia,2019,0.527249235154176
+Castilla Y León,Segovia,2020,0.7011466929252739
+Castilla Y León,Segovia,2021,0.7087089287895444
+Castilla Y León,Segovia,2022,0.7862146056663102
+Castilla Y León,Segovia,2023,0.8558870387293475
+Castilla Y León,Segovia,2024,0.8900420124021257
+Andalucía,Sevilla,2013,0.4882991242058349
+Andalucía,Sevilla,2014,0.6078063503444249
+Andalucía,Sevilla,2015,0.6394214734573334
+Andalucía,Sevilla,2016,0.6852127366968206
+Andalucía,Sevilla,2017,0.8054159342548756
+Andalucía,Sevilla,2018,0.872260152248492
+Andalucía,Sevilla,2019,0.920929240137587
+Andalucía,Sevilla,2020,0.9262130345707311
+Andalucía,Sevilla,2021,0.9276710774609569
+Andalucía,Sevilla,2022,0.934928597344006
+Andalucía,Sevilla,2023,0.9644046042019864
+Andalucía,Sevilla,2024,0.9725456423996164
+Castilla Y León,Soria,2013,0.4547132575713174
+Castilla Y León,Soria,2014,0.4519870080032358
+Castilla Y León,Soria,2015,0.4548770503541739
+Castilla Y León,Soria,2016,0.4707428263208424
+Castilla Y León,Soria,2017,0.5114814036050234
+Castilla Y León,Soria,2018,0.5804665269941263
+Castilla Y León,Soria,2019,0.5487135315854581
+Castilla Y León,Soria,2020,0.656414926579
+Castilla Y León,Soria,2021,0.6007989674881692
+Castilla Y León,Soria,2022,0.6353193407316271
+Castilla Y León,Soria,2023,0.6967704743097548
+Castilla Y León,Soria,2024,0.688000293301722
+Cataluña,Tarragona,2013,0.23525593039838752
+Cataluña,Tarragona,2014,0.2300723329168078
+Cataluña,Tarragona,2015,0.32038444255271764
+Cataluña,Tarragona,2016,0.3870098744412136
+Cataluña,Tarragona,2017,0.503375928001012
+Cataluña,Tarragona,2018,0.5978240647854108
+Cataluña,Tarragona,2019,0.6344517465356281
+Cataluña,Tarragona,2020,0.7392302910685274
+Cataluña,Tarragona,2021,0.8229911045985595
+Cataluña,Tarragona,2022,0.8892889223063146
+Cataluña,Tarragona,2023,0.9388057578729107
+Cataluña,Tarragona,2024,0.9486167483088407
+Aragón,Teruel,2013,0.015207867662795272
+Aragón,Teruel,2014,0.030889851643568608
+Aragón,Teruel,2015,0.2154470282253489
+Aragón,Teruel,2016,0.25305789519687144
+Aragón,Teruel,2017,0.41678136350158845
+Aragón,Teruel,2018,0.4847848624331595
+Aragón,Teruel,2019,0.5249842975033226
+Aragón,Teruel,2020,0.5874888248870302
+Aragón,Teruel,2021,0.5113369045752065
+Aragón,Teruel,2022,0.6711012267968399
+Aragón,Teruel,2023,0.827140708597352
+Aragón,Teruel,2024,0.75111359031361
+Castilla-La Mancha,Toledo,2013,0.21123032774265735
+Castilla-La Mancha,Toledo,2014,0.21639513600509402
+Castilla-La Mancha,Toledo,2015,0.25125700151989144
+Castilla-La Mancha,Toledo,2016,0.2911367923667615
+Castilla-La Mancha,Toledo,2017,0.4607595719235029
+Castilla-La Mancha,Toledo,2018,0.6138170505242493
+Castilla-La Mancha,Toledo,2019,0.6559375972150934
+Castilla-La Mancha,Toledo,2020,0.7671344497775756
+Castilla-La Mancha,Toledo,2021,0.9418502076948134
+Castilla-La Mancha,Toledo,2022,0.9472287853207229
+Castilla-La Mancha,Toledo,2023,0.9608799472825227
+Castilla-La Mancha,Toledo,2024,0.9573688812630954
+Comunitat Valenciana,Valencia/València,2013,0.7780874935670761
+Comunitat Valenciana,Valencia/València,2014,0.7797027651248379
+Comunitat Valenciana,Valencia/València,2015,0.7995041492126506
+Comunitat Valenciana,Valencia/València,2016,0.8117379605802055
+Comunitat Valenciana,Valencia/València,2017,0.8457224921331893
+Comunitat Valenciana,Valencia/València,2018,0.8696370155260997
+Comunitat Valenciana,Valencia/València,2019,0.9030659096843068
+Comunitat Valenciana,Valencia/València,2020,0.9292752345209555
+Comunitat Valenciana,Valencia/València,2021,0.9204463427209766
+Comunitat Valenciana,Valencia/València,2022,0.9265445409647576
+Comunitat Valenciana,Valencia/València,2023,0.9577343867189904
+Comunitat Valenciana,Valencia/València,2024,0.9619095991311107
+Castilla Y León,Valladolid,2013,0.6765530450502651
+Castilla Y León,Valladolid,2014,0.6857440802489185
+Castilla Y León,Valladolid,2015,0.6900220966431859
+Castilla Y León,Valladolid,2016,0.7390633361383513
+Castilla Y León,Valladolid,2017,0.7743500143508653
+Castilla Y León,Valladolid,2018,0.8358271131270077
+Castilla Y León,Valladolid,2019,0.8290725093144353
+Castilla Y León,Valladolid,2020,0.8849453152389279
+Castilla Y León,Valladolid,2021,0.9047205928839872
+Castilla Y León,Valladolid,2022,0.9286719719036138
+Castilla Y León,Valladolid,2023,0.9396599165465019
+Castilla Y León,Valladolid,2024,0.9683317383042761
+Castilla Y León,Zamora,2013,0.4403839461745668
+Castilla Y León,Zamora,2014,0.44050133202796815
+Castilla Y León,Zamora,2015,0.4430040356035641
+Castilla Y León,Zamora,2016,0.44288482507609706
+Castilla Y León,Zamora,2017,0.44579644749904324
+Castilla Y León,Zamora,2018,0.4921960433562051
+Castilla Y León,Zamora,2019,0.5177447273461762
+Castilla Y León,Zamora,2020,0.5558186415103649
+Castilla Y León,Zamora,2021,0.5351768196519741
+Castilla Y León,Zamora,2022,0.7222632356043028
+Castilla Y León,Zamora,2023,0.8472276205921379
+Castilla Y León,Zamora,2024,0.8950914405234367
+Aragón,Zaragoza,2013,0.5440501664306042
+Aragón,Zaragoza,2014,0.7057676567553307
+Aragón,Zaragoza,2015,0.7374117694866325
+Aragón,Zaragoza,2016,0.7678884397322118
+Aragón,Zaragoza,2017,0.8427500757389721
+Aragón,Zaragoza,2018,0.8779230095667244
+Aragón,Zaragoza,2019,0.8721229980571734
+Aragón,Zaragoza,2020,0.9072547730924186
+Aragón,Zaragoza,2021,0.8592886474096721
+Aragón,Zaragoza,2022,0.8622552774259599
+Aragón,Zaragoza,2023,0.927433216662223
+Aragón,Zaragoza,2024,0.914999151631695
+Castilla Y León,Ávila,2013,0.2742692355744458
+Castilla Y León,Ávila,2014,0.27838048645655344
+Castilla Y León,Ávila,2015,0.28149699180773774
+Castilla Y León,Ávila,2016,0.3310604433072931
+Castilla Y León,Ávila,2017,0.39790598347125644
+Castilla Y León,Ávila,2018,0.4110506131551878
+Castilla Y León,Ávila,2019,0.442271108061521
+Castilla Y León,Ávila,2020,0.5718982366883395
+Castilla Y León,Ávila,2021,0.5943151209106412
+Castilla Y León,Ávila,2022,0.6674642551344757
+Castilla Y León,Ávila,2023,0.7432810212847647
+Castilla Y León,Ávila,2024,0.7954644779300395

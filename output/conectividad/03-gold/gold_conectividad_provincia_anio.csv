@@ -1,0 +1,625 @@
+ccaa,provincia,anyo,cob_100mbps_pct,delta_yoy,ranking_anio
+Castilla-La Mancha,Albacete,2013,52.5929,,20
+Castilla-La Mancha,Albacete,2014,52.9683,0.3754,22
+Castilla-La Mancha,Albacete,2015,53.7551,0.7868,26
+Castilla-La Mancha,Albacete,2016,53.6744,-0.0807,29
+Castilla-La Mancha,Albacete,2017,62.1609,8.4865,27
+Castilla-La Mancha,Albacete,2018,74.6987,12.5378,23
+Castilla-La Mancha,Albacete,2019,88.5003,13.8016,10
+Castilla-La Mancha,Albacete,2020,92.0779,3.5776,10
+Castilla-La Mancha,Albacete,2021,87.5416,-4.5363,24
+Castilla-La Mancha,Albacete,2022,90.0656,2.524,23
+Castilla-La Mancha,Albacete,2023,92.5153,2.4497,27
+Castilla-La Mancha,Albacete,2024,92.9757,0.4604,30
+Comunitat Valenciana,Alicante/Alacant,2013,50.8892,,21
+Comunitat Valenciana,Alicante/Alacant,2014,52.35,1.4608,23
+Comunitat Valenciana,Alicante/Alacant,2015,59.275,6.925,21
+Comunitat Valenciana,Alicante/Alacant,2016,61.1285,1.8535,24
+Comunitat Valenciana,Alicante/Alacant,2017,70.6984,9.5699,20
+Comunitat Valenciana,Alicante/Alacant,2018,79.7763,9.0779,18
+Comunitat Valenciana,Alicante/Alacant,2019,84.6253,4.849,14
+Comunitat Valenciana,Alicante/Alacant,2020,90.8787,6.2534,12
+Comunitat Valenciana,Alicante/Alacant,2021,88.3214,-2.5573,20
+Comunitat Valenciana,Alicante/Alacant,2022,92.9435,4.6221,13
+Comunitat Valenciana,Alicante/Alacant,2023,94.5931,1.6496,14
+Comunitat Valenciana,Alicante/Alacant,2024,95.4646,0.8715,15
+Andalucía,Almería,2013,29.916,,38
+Andalucía,Almería,2014,27.1518,-2.7642,45
+Andalucía,Almería,2015,39.8375,12.6857,38
+Andalucía,Almería,2016,45.2538,5.4163,37
+Andalucía,Almería,2017,56.4489,11.1951,35
+Andalucía,Almería,2018,65.126,8.6771,32
+Andalucía,Almería,2019,67.8442,2.7182,36
+Andalucía,Almería,2020,71.967,4.1228,42
+Andalucía,Almería,2021,85.7542,13.7872,29
+Andalucía,Almería,2022,88.2811,2.5269,28
+Andalucía,Almería,2023,92.5456,4.2645,26
+Andalucía,Almería,2024,93.1974,0.6518,29
+Pais Vasco,Araba/Álava,2013,73.7848,,7
+Pais Vasco,Araba/Álava,2014,75.0794,1.2946,8
+Pais Vasco,Araba/Álava,2015,77.4934,2.414,9
+Pais Vasco,Araba/Álava,2016,83.4536,5.9602,7
+Pais Vasco,Araba/Álava,2017,84.8014,1.3478,7
+Pais Vasco,Araba/Álava,2018,85.4273,0.6259,12
+Pais Vasco,Araba/Álava,2019,90.4127,4.9854,8
+Pais Vasco,Araba/Álava,2020,91.7007,1.288,11
+Pais Vasco,Araba/Álava,2021,95.8548,4.1541,5
+Pais Vasco,Araba/Álava,2022,97.3477,1.4929,5
+Pais Vasco,Araba/Álava,2023,96.8258,-0.5219,6
+Pais Vasco,Araba/Álava,2024,97.0534,0.2276,8
+Asturias (Principado De),Asturias,2013,79.2007,,5
+Asturias (Principado De),Asturias,2014,79.0948,-0.1059,6
+Asturias (Principado De),Asturias,2015,79.3252,0.2304,8
+Asturias (Principado De),Asturias,2016,79.4229,0.0977,9
+Asturias (Principado De),Asturias,2017,79.8426,0.4197,13
+Asturias (Principado De),Asturias,2018,80.3419,0.4993,16
+Asturias (Principado De),Asturias,2019,79.9184,-0.4235,24
+Asturias (Principado De),Asturias,2020,82.4247,2.5063,25
+Asturias (Principado De),Asturias,2021,77.4915,-4.9332,38
+Asturias (Principado De),Asturias,2022,79.1056,1.6141,39
+Asturias (Principado De),Asturias,2023,83.7398,4.6342,43
+Asturias (Principado De),Asturias,2024,87.8673,4.1275,42
+Extremadura,Badajoz,2013,26.9287,,44
+Extremadura,Badajoz,2014,27.447,0.5183,44
+Extremadura,Badajoz,2015,34.7667,7.3197,43
+Extremadura,Badajoz,2016,39.9084,5.1417,43
+Extremadura,Badajoz,2017,52.247,12.3386,41
+Extremadura,Badajoz,2018,59.776,7.529,42
+Extremadura,Badajoz,2019,70.7889,11.0129,31
+Extremadura,Badajoz,2020,80.1551,9.3662,27
+Extremadura,Badajoz,2021,86.777,6.6219,26
+Extremadura,Badajoz,2022,86.2874,-0.4896,32
+Extremadura,Badajoz,2023,91.5572,5.2698,34
+Extremadura,Badajoz,2024,92.8055,1.2483,32
+Balears (Illes),"Balears, Illes",2013,45.6825,,28
+Balears (Illes),"Balears, Illes",2014,44.4316,-1.2509,31
+Balears (Illes),"Balears, Illes",2015,59.1245,14.6929,22
+Balears (Illes),"Balears, Illes",2016,73.7621,14.6376,12
+Balears (Illes),"Balears, Illes",2017,81.9403,8.1782,10
+Balears (Illes),"Balears, Illes",2018,85.5724,3.6321,11
+Balears (Illes),"Balears, Illes",2019,84.0114,-1.561,16
+Balears (Illes),"Balears, Illes",2020,90.3695,6.3581,17
+Balears (Illes),"Balears, Illes",2021,92.6583,2.2888,13
+Balears (Illes),"Balears, Illes",2022,91.5537,-1.1046,19
+Balears (Illes),"Balears, Illes",2023,92.2064,0.6527,31
+Balears (Illes),"Balears, Illes",2024,95.4581,3.2517,16
+Cataluña,Barcelona,2013,58.1505,,16
+Cataluña,Barcelona,2014,74.0448,15.8943,9
+Cataluña,Barcelona,2015,80.4209,6.3761,6
+Cataluña,Barcelona,2016,90.5176,10.0967,5
+Cataluña,Barcelona,2017,93.7521,3.2345,5
+Cataluña,Barcelona,2018,95.6165,1.8644,4
+Cataluña,Barcelona,2019,95.6246,0.0081,5
+Cataluña,Barcelona,2020,95.5473,-0.0773,5
+Cataluña,Barcelona,2021,98.4085,2.8612,4
+Cataluña,Barcelona,2022,97.7583,-0.6502,4
+Cataluña,Barcelona,2023,98.5817,0.8234,4
+Cataluña,Barcelona,2024,98.832,0.2503,2
+Pais Vasco,Bizkaia,2013,91.2849,,1
+Pais Vasco,Bizkaia,2014,91.0963,-0.1886,1
+Pais Vasco,Bizkaia,2015,92.282,1.1857,3
+Pais Vasco,Bizkaia,2016,93.0295,0.7475,4
+Pais Vasco,Bizkaia,2017,94.5139,1.4844,4
+Pais Vasco,Bizkaia,2018,95.4825,0.9686,5
+Pais Vasco,Bizkaia,2019,96.6585,1.176,4
+Pais Vasco,Bizkaia,2020,96.927,0.2685,2
+Pais Vasco,Bizkaia,2021,94.1827,-2.7443,7
+Pais Vasco,Bizkaia,2022,94.714,0.5313,8
+Pais Vasco,Bizkaia,2023,96.9325,2.2185,5
+Pais Vasco,Bizkaia,2024,97.6577,0.7252,4
+Castilla Y León,Burgos,2013,63.2866,,12
+Castilla Y León,Burgos,2014,63.3015,0.0149,16
+Castilla Y León,Burgos,2015,65.1418,1.8403,17
+Castilla Y León,Burgos,2016,66.6085,1.4667,18
+Castilla Y León,Burgos,2017,68.7665,2.158,21
+Castilla Y León,Burgos,2018,70.3901,1.6236,26
+Castilla Y León,Burgos,2019,72.5706,2.1805,27
+Castilla Y León,Burgos,2020,76.0418,3.4712,35
+Castilla Y León,Burgos,2021,71.8041,-4.2377,41
+Castilla Y León,Burgos,2022,74.8066,3.0025,42
+Castilla Y León,Burgos,2023,81.4084,6.6018,47
+Castilla Y León,Burgos,2024,82.2585,0.8501,46
+Cantabria,Cantabria,2013,62.5512,,13
+Cantabria,Cantabria,2014,62.7457,0.1945,17
+Cantabria,Cantabria,2015,63.5443,0.7986,19
+Cantabria,Cantabria,2016,65.8866,2.3423,20
+Cantabria,Cantabria,2017,68.3338,2.4472,22
+Cantabria,Cantabria,2018,75.1535,6.8197,22
+Cantabria,Cantabria,2019,75.5473,0.3938,26
+Cantabria,Cantabria,2020,76.995,1.4477,31
+Cantabria,Cantabria,2021,91.892,14.897,16
+Cantabria,Cantabria,2022,94.4569,2.5649,9
+Cantabria,Cantabria,2023,96.4476,1.9907,7
+Cantabria,Cantabria,2024,97.5371,1.0895,5
+Comunitat Valenciana,Castellón/Castelló,2013,65.6337,,10
+Comunitat Valenciana,Castellón/Castelló,2014,65.6804,0.0467,15
+Comunitat Valenciana,Castellón/Castelló,2015,65.9668,0.2864,15
+Comunitat Valenciana,Castellón/Castelló,2016,67.4798,1.513,17
+Comunitat Valenciana,Castellón/Castelló,2017,71.0154,3.5356,18
+Comunitat Valenciana,Castellón/Castelló,2018,79.0186,8.0032,19
+Comunitat Valenciana,Castellón/Castelló,2019,81.9703,2.9517,21
+Comunitat Valenciana,Castellón/Castelló,2020,90.3136,8.3433,18
+Comunitat Valenciana,Castellón/Castelló,2021,86.4464,-3.8672,27
+Comunitat Valenciana,Castellón/Castelló,2022,89.8649,3.4185,24
+Comunitat Valenciana,Castellón/Castelló,2023,93.6932,3.8283,19
+Comunitat Valenciana,Castellón/Castelló,2024,94.7533,1.0601,20
+Ciudad Autónoma De Ceuta,Ceuta,2013,43.8586,,32
+Ciudad Autónoma De Ceuta,Ceuta,2014,87.0584,43.1998,3
+Ciudad Autónoma De Ceuta,Ceuta,2015,86.2561,-0.8023,4
+Ciudad Autónoma De Ceuta,Ceuta,2016,84.8878,-1.3683,6
+Ciudad Autónoma De Ceuta,Ceuta,2017,86.8763,1.9885,6
+Ciudad Autónoma De Ceuta,Ceuta,2018,85.7237,-1.1526,10
+Ciudad Autónoma De Ceuta,Ceuta,2019,91.343,5.6193,7
+Ciudad Autónoma De Ceuta,Ceuta,2020,92.7817,1.4387,8
+Ciudad Autónoma De Ceuta,Ceuta,2021,99.2822,6.5005,2
+Ciudad Autónoma De Ceuta,Ceuta,2022,99.3237,0.0415,2
+Ciudad Autónoma De Ceuta,Ceuta,2023,99.2965,-0.0272,1
+Ciudad Autónoma De Ceuta,Ceuta,2024,96.175,-3.1215,13
+Castilla-La Mancha,Ciudad Real,2013,29.5737,,40
+Castilla-La Mancha,Ciudad Real,2014,33.6215,4.0478,37
+Castilla-La Mancha,Ciudad Real,2015,34.8282,1.2067,42
+Castilla-La Mancha,Ciudad Real,2016,40.1907,5.3625,41
+Castilla-La Mancha,Ciudad Real,2017,52.301,12.1103,40
+Castilla-La Mancha,Ciudad Real,2018,64.8208,12.5198,33
+Castilla-La Mancha,Ciudad Real,2019,70.847,6.0262,30
+Castilla-La Mancha,Ciudad Real,2020,86.0293,15.1823,22
+Castilla-La Mancha,Ciudad Real,2021,88.0528,2.0235,23
+Castilla-La Mancha,Ciudad Real,2022,87.2526,-0.8002,31
+Castilla-La Mancha,Ciudad Real,2023,92.7704,5.5178,24
+Castilla-La Mancha,Ciudad Real,2024,93.5452,0.7748,26
+Galicia,"Coruña, A",2013,62.2298,,14
+Galicia,"Coruña, A",2014,62.3709,0.1411,18
+Galicia,"Coruña, A",2015,62.9849,0.614,20
+Galicia,"Coruña, A",2016,63.8879,0.903,23
+Galicia,"Coruña, A",2017,64.9751,1.0872,24
+Galicia,"Coruña, A",2018,66.9466,1.9715,29
+Galicia,"Coruña, A",2019,70.6606,3.714,32
+Galicia,"Coruña, A",2020,75.6003,4.9397,36
+Galicia,"Coruña, A",2021,82.695,7.0947,32
+Galicia,"Coruña, A",2022,83.1275,0.4325,35
+Galicia,"Coruña, A",2023,88.1325,5.005,38
+Galicia,"Coruña, A",2024,91.156,3.0235,36
+Castilla-La Mancha,Cuenca,2013,25.7045,,46
+Castilla-La Mancha,Cuenca,2014,25.7045,0.0,46
+Castilla-La Mancha,Cuenca,2015,26.1027,0.3982,50
+Castilla-La Mancha,Cuenca,2016,26.1927,0.09,51
+Castilla-La Mancha,Cuenca,2017,33.5286,7.3359,52
+Castilla-La Mancha,Cuenca,2018,55.4717,21.9431,45
+Castilla-La Mancha,Cuenca,2019,65.2037,9.732,41
+Castilla-La Mancha,Cuenca,2020,76.8813,11.6776,32
+Castilla-La Mancha,Cuenca,2021,75.0599,-1.8214,39
+Castilla-La Mancha,Cuenca,2022,79.117,4.0571,38
+Castilla-La Mancha,Cuenca,2023,88.7408,9.6238,36
+Castilla-La Mancha,Cuenca,2024,88.8073,0.0665,41
+Extremadura,Cáceres,2013,23.734,,47
+Extremadura,Cáceres,2014,25.0333,1.2993,48
+Extremadura,Cáceres,2015,29.3613,4.328,47
+Extremadura,Cáceres,2016,33.5922,4.2309,46
+Extremadura,Cáceres,2017,42.3811,8.7889,49
+Extremadura,Cáceres,2018,48.8117,6.4306,50
+Extremadura,Cáceres,2019,53.4211,4.6094,48
+Extremadura,Cáceres,2020,68.8801,15.459,46
+Extremadura,Cáceres,2021,79.7923,10.9122,36
+Extremadura,Cáceres,2022,82.1615,2.3692,36
+Extremadura,Cáceres,2023,89.3619,7.2004,35
+Extremadura,Cáceres,2024,90.6046,1.2427,37
+Andalucía,Cádiz,2013,67.2616,,9
+Andalucía,Cádiz,2014,68.4217,1.1601,13
+Andalucía,Cádiz,2015,69.9987,1.577,12
+Andalucía,Cádiz,2016,71.1589,1.1602,15
+Andalucía,Cádiz,2017,78.3134,7.1545,15
+Andalucía,Cádiz,2018,82.7307,4.4173,15
+Andalucía,Cádiz,2019,84.0373,1.3066,15
+Andalucía,Cádiz,2020,86.6337,2.5964,21
+Andalucía,Cádiz,2021,92.2155,5.5818,14
+Andalucía,Cádiz,2022,92.3171,0.1016,18
+Andalucía,Cádiz,2023,95.6492,3.3321,12
+Andalucía,Cádiz,2024,97.0037,1.3545,9
+Andalucía,Córdoba,2013,44.0519,,30
+Andalucía,Córdoba,2014,52.0627,8.0108,24
+Andalucía,Córdoba,2015,54.9426,2.8799,25
+Andalucía,Córdoba,2016,57.1073,2.1647,26
+Andalucía,Córdoba,2017,62.6953,5.588,26
+Andalucía,Córdoba,2018,72.7372,10.0419,25
+Andalucía,Córdoba,2019,87.5431,14.8059,11
+Andalucía,Córdoba,2020,90.5512,3.0081,16
+Andalucía,Córdoba,2021,88.9993,-1.5519,19
+Andalucía,Córdoba,2022,87.9065,-1.0928,29
+Andalucía,Córdoba,2023,92.2641,4.3576,30
+Andalucía,Córdoba,2024,93.2332,0.9691,28
+Pais Vasco,Gipuzkoa,2013,82.6671,,4
+Pais Vasco,Gipuzkoa,2014,83.2112,0.5441,5
+Pais Vasco,Gipuzkoa,2015,84.8332,1.622,5
+Pais Vasco,Gipuzkoa,2016,93.2794,8.4462,3
+Pais Vasco,Gipuzkoa,2017,96.2181,2.9387,2
+Pais Vasco,Gipuzkoa,2018,96.7436,0.5255,3
+Pais Vasco,Gipuzkoa,2019,97.5791,0.8355,2
+Pais Vasco,Gipuzkoa,2020,96.0171,-1.562,4
+Pais Vasco,Gipuzkoa,2021,93.9543,-2.0628,8
+Pais Vasco,Gipuzkoa,2022,95.2006,1.2463,6
+Pais Vasco,Gipuzkoa,2023,96.4455,1.2449,8
+Pais Vasco,Gipuzkoa,2024,97.3323,0.8868,6
+Cataluña,Girona,2013,14.701,,51
+Cataluña,Girona,2014,25.5206,10.8196,47
+Cataluña,Girona,2015,34.0723,8.5517,44
+Cataluña,Girona,2016,40.0035,5.9312,42
+Cataluña,Girona,2017,53.7986,13.7951,38
+Cataluña,Girona,2018,58.3832,4.5846,43
+Cataluña,Girona,2019,60.3865,2.0033,44
+Cataluña,Girona,2020,71.837,11.4505,43
+Cataluña,Girona,2021,81.4526,9.6156,35
+Cataluña,Girona,2022,90.2775,8.8249,22
+Cataluña,Girona,2023,94.766,4.4885,13
+Cataluña,Girona,2024,96.8672,2.1012,10
+Andalucía,Granada,2013,31.1198,,36
+Andalucía,Granada,2014,36.0342,4.9144,36
+Andalucía,Granada,2015,45.7772,9.743,33
+Andalucía,Granada,2016,54.8524,9.0752,28
+Andalucía,Granada,2017,60.0236,5.1712,29
+Andalucía,Granada,2018,66.5655,6.5419,30
+Andalucía,Granada,2019,72.0243,5.4588,28
+Andalucía,Granada,2020,80.8172,8.7929,26
+Andalucía,Granada,2021,88.1713,7.3541,22
+Andalucía,Granada,2022,89.6907,1.5194,25
+Andalucía,Granada,2023,93.6959,4.0052,18
+Andalucía,Granada,2024,93.7638,0.0679,24
+Castilla-La Mancha,Guadalajara,2013,29.9973,,37
+Castilla-La Mancha,Guadalajara,2014,30.0297,0.0324,40
+Castilla-La Mancha,Guadalajara,2015,39.0081,8.9784,39
+Castilla-La Mancha,Guadalajara,2016,47.4209,8.4128,35
+Castilla-La Mancha,Guadalajara,2017,57.8403,10.4194,32
+Castilla-La Mancha,Guadalajara,2018,62.717,4.8767,35
+Castilla-La Mancha,Guadalajara,2019,69.0423,6.3253,34
+Castilla-La Mancha,Guadalajara,2020,76.4607,7.4184,34
+Castilla-La Mancha,Guadalajara,2021,73.2553,-3.2054,40
+Castilla-La Mancha,Guadalajara,2022,78.5225,5.2672,41
+Castilla-La Mancha,Guadalajara,2023,83.3756,4.8531,45
+Castilla-La Mancha,Guadalajara,2024,84.4532,1.0776,45
+Andalucía,Huelva,2013,36.805,,34
+Andalucía,Huelva,2014,40.9624,4.1574,35
+Andalucía,Huelva,2015,40.7554,-0.207,37
+Andalucía,Huelva,2016,41.3887,0.6333,40
+Andalucía,Huelva,2017,56.1534,14.7647,37
+Andalucía,Huelva,2018,61.9341,5.7807,37
+Andalucía,Huelva,2019,70.0692,8.1351,33
+Andalucía,Huelva,2020,79.7284,9.6592,29
+Andalucía,Huelva,2021,83.7742,4.0458,31
+Andalucía,Huelva,2022,87.6565,3.8823,30
+Andalucía,Huelva,2023,93.0806,5.4241,22
+Andalucía,Huelva,2024,95.0144,1.9338,18
+Aragón,Huesca,2013,23.3896,,49
+Aragón,Huesca,2014,23.4849,0.0953,49
+Aragón,Huesca,2015,26.3096,2.8247,49
+Aragón,Huesca,2016,29.7847,3.4751,49
+Aragón,Huesca,2017,45.1912,15.4065,46
+Aragón,Huesca,2018,59.9382,14.747,40
+Aragón,Huesca,2019,71.4549,11.5167,29
+Aragón,Huesca,2020,78.5513,7.0964,30
+Aragón,Huesca,2021,70.5594,-7.9919,44
+Aragón,Huesca,2022,63.2014,-7.358,51
+Aragón,Huesca,2023,83.7963,20.5949,42
+Aragón,Huesca,2024,81.8678,-1.9285,47
+Andalucía,Jaén,2013,26.0128,,45
+Andalucía,Jaén,2014,31.4446,5.4318,39
+Andalucía,Jaén,2015,35.4002,3.9556,41
+Andalucía,Jaén,2016,37.9602,2.56,45
+Andalucía,Jaén,2017,56.2812,18.321,36
+Andalucía,Jaén,2018,69.509,13.2278,27
+Andalucía,Jaén,2019,81.9895,12.4805,20
+Andalucía,Jaén,2020,90.8257,8.8362,13
+Andalucía,Jaén,2021,87.1896,-3.6361,25
+Andalucía,Jaén,2022,89.4618,2.2722,26
+Andalucía,Jaén,2023,92.4274,2.9656,28
+Andalucía,Jaén,2024,91.378,-1.0494,34
+Castilla Y León,León,2013,49.1862,,24
+Castilla Y León,León,2014,49.2965,0.1103,27
+Castilla Y León,León,2015,49.4941,0.1976,31
+Castilla Y León,León,2016,52.4982,3.0041,30
+Castilla Y León,León,2017,57.8838,5.3856,31
+Castilla Y León,León,2018,62.0927,4.2089,36
+Castilla Y León,León,2019,63.9323,1.8396,42
+Castilla Y León,León,2020,71.8151,7.8828,44
+Castilla Y León,León,2021,66.586,-5.2291,46
+Castilla Y León,León,2022,73.7478,7.1618,43
+Castilla Y León,León,2023,83.6714,9.9236,44
+Castilla Y León,León,2024,85.1004,1.429,44
+Cataluña,Lleida,2013,28.7861,,42
+Cataluña,Lleida,2014,28.8238,0.0377,42
+Cataluña,Lleida,2015,38.1309,9.3071,40
+Cataluña,Lleida,2016,43.891,5.7601,39
+Cataluña,Lleida,2017,57.336,13.445,34
+Cataluña,Lleida,2018,67.8783,10.5423,28
+Cataluña,Lleida,2019,68.6609,0.7826,35
+Cataluña,Lleida,2020,74.6799,6.019,37
+Cataluña,Lleida,2021,79.148,4.4681,37
+Cataluña,Lleida,2022,85.4132,6.2652,34
+Cataluña,Lleida,2023,91.6628,6.2496,33
+Cataluña,Lleida,2024,91.1588,-0.504,35
+Galicia,Lugo,2013,49.3219,,23
+Galicia,Lugo,2014,49.5844,0.2625,26
+Galicia,Lugo,2015,49.9626,0.3782,29
+Galicia,Lugo,2016,49.9465,-0.0161,33
+Galicia,Lugo,2017,50.7588,0.8123,43
+Galicia,Lugo,2018,51.3924,0.6336,47
+Galicia,Lugo,2019,56.0336,4.6412,46
+Galicia,Lugo,2020,60.4009,4.3673,49
+Galicia,Lugo,2021,61.3511,0.9502,48
+Galicia,Lugo,2022,63.0061,1.655,52
+Galicia,Lugo,2023,69.7365,6.7304,51
+Galicia,Lugo,2024,76.127,6.3905,49
+Madrid (Comunidad De),Madrid,2013,82.8467,,3
+Madrid (Comunidad De),Madrid,2014,90.0891,7.2424,2
+Madrid (Comunidad De),Madrid,2015,93.1172,3.0281,2
+Madrid (Comunidad De),Madrid,2016,94.7079,1.5907,2
+Madrid (Comunidad De),Madrid,2017,96.1401,1.4322,3
+Madrid (Comunidad De),Madrid,2018,97.129,0.9889,2
+Madrid (Comunidad De),Madrid,2019,97.2985,0.1695,3
+Madrid (Comunidad De),Madrid,2020,96.8534,-0.4451,3
+Madrid (Comunidad De),Madrid,2021,98.4118,1.5584,3
+Madrid (Comunidad De),Madrid,2022,98.7198,0.308,3
+Madrid (Comunidad De),Madrid,2023,98.9759,0.2561,2
+Madrid (Comunidad De),Madrid,2024,99.0966,0.1207,1
+Ciudad Autónoma De Melilla,Melilla,2013,83.3944,,2
+Ciudad Autónoma De Melilla,Melilla,2014,86.7558,3.3614,4
+Ciudad Autónoma De Melilla,Melilla,2015,95.7825,9.0267,1
+Ciudad Autónoma De Melilla,Melilla,2016,100.0,4.2175,1
+Ciudad Autónoma De Melilla,Melilla,2017,100.0,0.0,1
+Ciudad Autónoma De Melilla,Melilla,2018,100.0,0.0,1
+Ciudad Autónoma De Melilla,Melilla,2019,100.0,0.0,1
+Ciudad Autónoma De Melilla,Melilla,2020,100.0,0.0,1
+Ciudad Autónoma De Melilla,Melilla,2021,99.505,-0.495,1
+Ciudad Autónoma De Melilla,Melilla,2022,99.8137,0.3087,1
+Ciudad Autónoma De Melilla,Melilla,2023,98.8671,-0.9466,3
+Ciudad Autónoma De Melilla,Melilla,2024,98.2784,-0.5887,3
+Murcia (Región De),Murcia,2013,53.9556,,19
+Murcia (Región De),Murcia,2014,62.0159,8.0603,19
+Murcia (Región De),Murcia,2015,65.3933,3.3774,16
+Murcia (Región De),Murcia,2016,66.5193,1.126,19
+Murcia (Región De),Murcia,2017,70.7401,4.2208,19
+Murcia (Región De),Murcia,2018,78.2887,7.5486,20
+Murcia (Región De),Murcia,2019,83.535,5.2463,17
+Murcia (Región De),Murcia,2020,86.9388,3.4038,20
+Murcia (Región De),Murcia,2021,88.227,1.2882,21
+Murcia (Región De),Murcia,2022,91.0725,2.8455,21
+Murcia (Región De),Murcia,2023,92.3143,1.2418,29
+Murcia (Región De),Murcia,2024,94.2678,1.9535,22
+Andalucía,Málaga,2013,29.8001,,39
+Andalucía,Málaga,2014,41.6836,11.8835,34
+Andalucía,Málaga,2015,57.2965,15.6129,24
+Andalucía,Málaga,2016,65.8491,8.5526,21
+Andalucía,Málaga,2017,80.0441,14.195,12
+Andalucía,Málaga,2018,83.7298,3.6857,13
+Andalucía,Málaga,2019,82.7164,-1.0134,19
+Andalucía,Málaga,2020,93.8829,11.1665,6
+Andalucía,Málaga,2021,93.3424,-0.5405,9
+Andalucía,Málaga,2022,92.5602,-0.7822,16
+Andalucía,Málaga,2023,93.6134,1.0532,21
+Andalucía,Málaga,2024,95.3567,1.7433,17
+Navarra (Comunidad Foral),Navarra,2013,60.2303,,15
+Navarra (Comunidad Foral),Navarra,2014,68.2018,7.9715,14
+Navarra (Comunidad Foral),Navarra,2015,69.2282,1.0264,13
+Navarra (Comunidad Foral),Navarra,2016,71.3308,2.1026,14
+Navarra (Comunidad Foral),Navarra,2017,78.5412,7.2104,14
+Navarra (Comunidad Foral),Navarra,2018,80.0621,1.5209,17
+Navarra (Comunidad Foral),Navarra,2019,81.1594,1.0973,23
+Navarra (Comunidad Foral),Navarra,2020,79.8094,-1.35,28
+Navarra (Comunidad Foral),Navarra,2021,85.4854,5.676,30
+Navarra (Comunidad Foral),Navarra,2022,91.1047,5.6193,20
+Navarra (Comunidad Foral),Navarra,2023,93.0556,1.9509,23
+Navarra (Comunidad Foral),Navarra,2024,93.8814,0.8258,23
+Galicia,Ourense,2013,48.8864,,25
+Galicia,Ourense,2014,49.0956,0.2092,28
+Galicia,Ourense,2015,49.8895,0.7939,30
+Galicia,Ourense,2016,50.6469,0.7574,32
+Galicia,Ourense,2017,52.5433,1.8964,39
+Galicia,Ourense,2018,53.6497,1.1064,46
+Galicia,Ourense,2019,56.8118,3.1621,45
+Galicia,Ourense,2020,65.9519,9.1401,47
+Galicia,Ourense,2021,70.5756,4.6237,43
+Galicia,Ourense,2022,72.2897,1.7141,45
+Galicia,Ourense,2023,75.1007,2.811,49
+Galicia,Ourense,2024,70.9643,-4.1364,51
+Castilla Y León,Palencia,2013,47.4215,,27
+Castilla Y León,Palencia,2014,47.4215,0.0,29
+Castilla Y León,Palencia,2015,47.5234,0.1019,32
+Castilla Y León,Palencia,2016,48.2859,0.7625,34
+Castilla Y León,Palencia,2017,61.0168,12.7309,28
+Castilla Y León,Palencia,2018,64.2952,3.2784,34
+Castilla Y León,Palencia,2019,66.7715,2.4763,39
+Castilla Y León,Palencia,2020,73.9209,7.1494,40
+Castilla Y León,Palencia,2021,68.5422,-5.3787,45
+Castilla Y León,Palencia,2022,73.1659,4.6237,44
+Castilla Y León,Palencia,2023,84.7777,11.6118,40
+Castilla Y León,Palencia,2024,92.8191,8.0414,31
+Canarias,"Palmas, Las",2013,40.9134,,33
+Canarias,"Palmas, Las",2014,44.423,3.5096,32
+Canarias,"Palmas, Las",2015,53.6534,9.2304,27
+Canarias,"Palmas, Las",2016,63.9445,10.2911,22
+Canarias,"Palmas, Las",2017,67.7169,3.7724,23
+Canarias,"Palmas, Las",2018,75.9014,8.1845,21
+Canarias,"Palmas, Las",2019,81.2416,5.3402,22
+Canarias,"Palmas, Las",2020,85.427,4.1854,23
+Canarias,"Palmas, Las",2021,92.9345,7.5075,10
+Canarias,"Palmas, Las",2022,93.0247,0.0902,12
+Canarias,"Palmas, Las",2023,93.6472,0.6225,20
+Canarias,"Palmas, Las",2024,93.514,-0.1332,27
+Galicia,Pontevedra,2013,49.9135,,22
+Galicia,Pontevedra,2014,49.9094,-0.0041,25
+Galicia,Pontevedra,2015,52.1408,2.2314,28
+Galicia,Pontevedra,2016,56.3463,4.2055,27
+Galicia,Pontevedra,2017,57.4788,1.1325,33
+Galicia,Pontevedra,2018,61.4563,3.9775,38
+Galicia,Pontevedra,2019,67.624,6.1677,37
+Galicia,Pontevedra,2020,74.4588,6.8348,38
+Galicia,Pontevedra,2021,81.6743,7.2155,34
+Galicia,Pontevedra,2022,81.8819,0.2076,37
+Galicia,Pontevedra,2023,88.4267,6.5448,37
+Galicia,Pontevedra,2024,89.9438,1.5171,38
+Rioja (La),"Rioja, La",2013,65.0928,,11
+Rioja (La),"Rioja, La",2014,69.2241,4.1313,11
+Rioja (La),"Rioja, La",2015,71.1647,1.9406,11
+Rioja (La),"Rioja, La",2016,71.7226,0.5579,13
+Rioja (La),"Rioja, La",2017,76.1651,4.4425,17
+Rioja (La),"Rioja, La",2018,86.4017,10.2366,9
+Rioja (La),"Rioja, La",2019,85.6182,-0.7835,13
+Rioja (La),"Rioja, La",2020,90.7245,5.1063,15
+Rioja (La),"Rioja, La",2021,91.6013,0.8768,17
+Rioja (La),"Rioja, La",2022,92.5338,0.9325,17
+Rioja (La),"Rioja, La",2023,93.9342,1.4004,16
+Rioja (La),"Rioja, La",2024,93.6143,-0.3199,25
+Castilla Y León,Salamanca,2013,55.5254,,17
+Castilla Y León,Salamanca,2014,57.355,1.8296,21
+Castilla Y León,Salamanca,2015,57.3339,-0.0211,23
+Castilla Y León,Salamanca,2016,59.3538,2.0199,25
+Castilla Y León,Salamanca,2017,63.1495,3.7957,25
+Castilla Y León,Salamanca,2018,65.6873,2.5378,31
+Castilla Y León,Salamanca,2019,67.3304,1.6431,38
+Castilla Y León,Salamanca,2020,72.652,5.3216,41
+Castilla Y León,Salamanca,2021,66.2332,-6.4188,47
+Castilla Y León,Salamanca,2022,68.8664,2.6332,47
+Castilla Y León,Salamanca,2023,78.3451,9.4787,48
+Castilla Y León,Salamanca,2024,85.2069,6.8618,43
+Canarias,Santa Cruz De Tenerife,2013,31.806,,35
+Canarias,Santa Cruz De Tenerife,2014,33.2566,1.4506,38
+Canarias,Santa Cruz De Tenerife,2015,44.2511,10.9945,36
+Canarias,Santa Cruz De Tenerife,2016,52.0407,7.7896,31
+Canarias,Santa Cruz De Tenerife,2017,59.952,7.9113,30
+Canarias,Santa Cruz De Tenerife,2018,73.2225,13.2705,24
+Canarias,Santa Cruz De Tenerife,2019,75.7666,2.5441,25
+Canarias,Santa Cruz De Tenerife,2020,83.5677,7.8011,24
+Canarias,Santa Cruz De Tenerife,2021,92.7094,9.1417,12
+Canarias,Santa Cruz De Tenerife,2022,94.1233,1.4139,10
+Canarias,Santa Cruz De Tenerife,2023,91.959,-2.1643,32
+Canarias,Santa Cruz De Tenerife,2024,94.3626,2.4036,21
+Castilla Y León,Segovia,2013,28.8191,,41
+Castilla Y León,Segovia,2014,29.0931,0.274,41
+Castilla Y León,Segovia,2015,29.5248,0.4317,46
+Castilla Y León,Segovia,2016,32.953,3.4282,48
+Castilla Y León,Segovia,2017,42.6117,9.6587,48
+Castilla Y León,Segovia,2018,50.8325,8.2208,48
+Castilla Y León,Segovia,2019,52.7249,1.8924,49
+Castilla Y León,Segovia,2020,70.1147,17.3898,45
+Castilla Y León,Segovia,2021,70.8709,0.7562,42
+Castilla Y León,Segovia,2022,78.6215,7.7506,40
+Castilla Y León,Segovia,2023,85.5887,6.9672,39
+Castilla Y León,Segovia,2024,89.0042,3.4155,40
+Andalucía,Sevilla,2013,48.8299,,26
+Andalucía,Sevilla,2014,60.7806,11.9507,20
+Andalucía,Sevilla,2015,63.9421,3.1615,18
+Andalucía,Sevilla,2016,68.5213,4.5792,16
+Andalucía,Sevilla,2017,80.5416,12.0203,11
+Andalucía,Sevilla,2018,87.226,6.6844,7
+Andalucía,Sevilla,2019,92.0929,4.8669,6
+Andalucía,Sevilla,2020,92.6213,0.5284,9
+Andalucía,Sevilla,2021,92.7671,0.1458,11
+Andalucía,Sevilla,2022,93.4929,0.7258,11
+Andalucía,Sevilla,2023,96.4405,2.9476,9
+Andalucía,Sevilla,2024,97.2546,0.8141,7
+Castilla Y León,Soria,2013,45.4713,,29
+Castilla Y León,Soria,2014,45.1987,-0.2726,30
+Castilla Y León,Soria,2015,45.4877,0.289,34
+Castilla Y León,Soria,2016,47.0743,1.5866,36
+Castilla Y León,Soria,2017,51.1481,4.0738,42
+Castilla Y León,Soria,2018,58.0467,6.8986,44
+Castilla Y León,Soria,2019,54.8714,-3.1753,47
+Castilla Y León,Soria,2020,65.6415,10.7701,48
+Castilla Y León,Soria,2021,60.0799,-5.5616,49
+Castilla Y León,Soria,2022,63.5319,3.452,50
+Castilla Y León,Soria,2023,69.677,6.1451,52
+Castilla Y León,Soria,2024,68.8,-0.877,52
+Cataluña,Tarragona,2013,23.5256,,48
+Cataluña,Tarragona,2014,23.0072,-0.5184,50
+Cataluña,Tarragona,2015,32.0384,9.0312,45
+Cataluña,Tarragona,2016,38.701,6.6626,44
+Cataluña,Tarragona,2017,50.3376,11.6366,44
+Cataluña,Tarragona,2018,59.7824,9.4448,41
+Cataluña,Tarragona,2019,63.4452,3.6628,43
+Cataluña,Tarragona,2020,73.923,10.4778,39
+Cataluña,Tarragona,2021,82.2991,8.3761,33
+Cataluña,Tarragona,2022,88.9289,6.6298,27
+Cataluña,Tarragona,2023,93.8806,4.9517,17
+Cataluña,Tarragona,2024,94.8617,0.9811,19
+Aragón,Teruel,2013,1.5208,,52
+Aragón,Teruel,2014,3.089,1.5682,52
+Aragón,Teruel,2015,21.5447,18.4557,52
+Aragón,Teruel,2016,25.3058,3.7611,52
+Aragón,Teruel,2017,41.6781,16.3723,50
+Aragón,Teruel,2018,48.4785,6.8004,51
+Aragón,Teruel,2019,52.4984,4.0199,50
+Aragón,Teruel,2020,58.7489,6.2505,50
+Aragón,Teruel,2021,51.1337,-7.6152,52
+Aragón,Teruel,2022,67.1101,15.9764,48
+Aragón,Teruel,2023,82.7141,15.604,46
+Aragón,Teruel,2024,75.1114,-7.6027,50
+Castilla-La Mancha,Toledo,2013,21.123,,50
+Castilla-La Mancha,Toledo,2014,21.6395,0.5165,51
+Castilla-La Mancha,Toledo,2015,25.1257,3.4862,51
+Castilla-La Mancha,Toledo,2016,29.1137,3.988,50
+Castilla-La Mancha,Toledo,2017,46.076,16.9623,45
+Castilla-La Mancha,Toledo,2018,61.3817,15.3057,39
+Castilla-La Mancha,Toledo,2019,65.5938,4.2121,40
+Castilla-La Mancha,Toledo,2020,76.7134,11.1196,33
+Castilla-La Mancha,Toledo,2021,94.185,17.4716,6
+Castilla-La Mancha,Toledo,2022,94.7229,0.5379,7
+Castilla-La Mancha,Toledo,2023,96.088,1.3651,10
+Castilla-La Mancha,Toledo,2024,95.7369,-0.3511,14
+Comunitat Valenciana,Valencia/València,2013,77.8087,,6
+Comunitat Valenciana,Valencia/València,2014,77.9703,0.1616,7
+Comunitat Valenciana,Valencia/València,2015,79.9504,1.9801,7
+Comunitat Valenciana,Valencia/València,2016,81.1738,1.2234,8
+Comunitat Valenciana,Valencia/València,2017,84.5722,3.3984,8
+Comunitat Valenciana,Valencia/València,2018,86.9637,2.3915,8
+Comunitat Valenciana,Valencia/València,2019,90.3066,3.3429,9
+Comunitat Valenciana,Valencia/València,2020,92.9275,2.6209,7
+Comunitat Valenciana,Valencia/València,2021,92.0446,-0.8829,15
+Comunitat Valenciana,Valencia/València,2022,92.6545,0.6099,15
+Comunitat Valenciana,Valencia/València,2023,95.7734,3.1189,11
+Comunitat Valenciana,Valencia/València,2024,96.191,0.4176,12
+Castilla Y León,Valladolid,2013,67.6553,,8
+Castilla Y León,Valladolid,2014,68.5744,0.9191,12
+Castilla Y León,Valladolid,2015,69.0022,0.4278,14
+Castilla Y León,Valladolid,2016,73.9063,4.9041,11
+Castilla Y León,Valladolid,2017,77.435,3.5287,16
+Castilla Y León,Valladolid,2018,83.5827,6.1477,14
+Castilla Y León,Valladolid,2019,82.9073,-0.6754,18
+Castilla Y León,Valladolid,2020,88.4945,5.5872,19
+Castilla Y León,Valladolid,2021,90.4721,1.9776,18
+Castilla Y León,Valladolid,2022,92.8672,2.3951,14
+Castilla Y León,Valladolid,2023,93.966,1.0988,15
+Castilla Y León,Valladolid,2024,96.8332,2.8672,11
+Castilla Y León,Zamora,2013,44.0384,,31
+Castilla Y León,Zamora,2014,44.0501,0.0117,33
+Castilla Y León,Zamora,2015,44.3004,0.2503,35
+Castilla Y León,Zamora,2016,44.2885,-0.0119,38
+Castilla Y León,Zamora,2017,44.5796,0.2911,47
+Castilla Y León,Zamora,2018,49.2196,4.64,49
+Castilla Y León,Zamora,2019,51.7745,2.5549,51
+Castilla Y León,Zamora,2020,55.5819,3.8074,52
+Castilla Y León,Zamora,2021,53.5177,-2.0642,51
+Castilla Y León,Zamora,2022,72.2263,18.7086,46
+Castilla Y León,Zamora,2023,84.7228,12.4965,41
+Castilla Y León,Zamora,2024,89.5091,4.7863,39
+Aragón,Zaragoza,2013,54.405,,18
+Aragón,Zaragoza,2014,70.5768,16.1718,10
+Aragón,Zaragoza,2015,73.7412,3.1644,10
+Aragón,Zaragoza,2016,76.7888,3.0476,10
+Aragón,Zaragoza,2017,84.275,7.4862,9
+Aragón,Zaragoza,2018,87.7923,3.5173,6
+Aragón,Zaragoza,2019,87.2123,-0.58,12
+Aragón,Zaragoza,2020,90.7255,3.5132,14
+Aragón,Zaragoza,2021,85.9289,-4.7966,28
+Aragón,Zaragoza,2022,86.2255,0.2966,33
+Aragón,Zaragoza,2023,92.7433,6.5178,25
+Aragón,Zaragoza,2024,91.4999,-1.2434,33
+Castilla Y León,Ávila,2013,27.4269,,43
+Castilla Y León,Ávila,2014,27.838,0.4111,43
+Castilla Y León,Ávila,2015,28.1497,0.3117,48
+Castilla Y León,Ávila,2016,33.106,4.9563,47
+Castilla Y León,Ávila,2017,39.7906,6.6846,51
+Castilla Y León,Ávila,2018,41.1051,1.3145,52
+Castilla Y León,Ávila,2019,44.2271,3.122,52
+Castilla Y León,Ávila,2020,57.1898,12.9627,51
+Castilla Y León,Ávila,2021,59.4315,2.2417,50
+Castilla Y León,Ávila,2022,66.7464,7.3149,49
+Castilla Y León,Ávila,2023,74.3281,7.5817,50
+Castilla Y León,Ávila,2024,79.5464,5.2183,48
