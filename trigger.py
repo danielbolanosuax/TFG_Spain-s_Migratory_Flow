@@ -13,7 +13,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
 
-# ✅ DESPUÉS — funciona en local Y en GitHub Actions
 VENV_PYTHON = ROOT / ".venv" / "bin" / "python"
 PYTHON = str(VENV_PYTHON) if VENV_PYTHON.exists() else sys.executable
 
