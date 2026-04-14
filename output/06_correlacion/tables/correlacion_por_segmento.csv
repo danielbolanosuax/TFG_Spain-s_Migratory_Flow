@@ -1,0 +1,10 @@
+segmento,variable,r,p_value,sig
+Rural (<P33),Compraventas vivienda,0.037,0.4768,ns
+Rural (<P33),Cobertura 100Mbps (%),0.064,0.2166,ns
+Rural (<P33),Compraventas per cápita,0.005,0.9172,ns
+Intermedia (P33–P66),Compraventas vivienda,-0.254,0.0,***
+Intermedia (P33–P66),Cobertura 100Mbps (%),0.191,0.0002,***
+Intermedia (P33–P66),Compraventas per cápita,-0.151,0.0032,**
+Urbana (>P66),Compraventas vivienda,-0.453,0.0,***
+Urbana (>P66),Cobertura 100Mbps (%),-0.09,0.0799,ns
+Urbana (>P66),Compraventas per cápita,0.003,0.951,ns

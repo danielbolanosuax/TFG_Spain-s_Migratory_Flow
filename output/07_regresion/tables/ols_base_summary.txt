@@ -1,0 +1,29 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             saldo_neto   R-squared:                       0.410
+Model:                            OLS   Adj. R-squared:                  0.409
+Method:                 Least Squares   F-statistic:                     318.5
+Date:                Tue, 14 Apr 2026   Prob (F-statistic):          6.14e-157
+Time:                        10:25:45   Log-Likelihood:                -14787.
+No. Observations:                1377   AIC:                         2.958e+04
+Df Residuals:                    1373   BIC:                         2.960e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+Intercept              1970.1249   1003.209      1.964      0.050       2.136    3938.113
+compraventas_vivienda    -0.1834      0.017    -10.885      0.000      -0.216      -0.150
+cob_100mbps_pct          77.8339     15.583      4.995      0.000      47.266     108.402
+poblacion_provincia      -0.0043      0.001     -6.462      0.000      -0.006      -0.003
+==============================================================================
+Omnibus:                     1058.621   Durbin-Watson:                   0.709
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            17913.466
+Skew:                           3.542   Prob(JB):                         0.00
+Kurtosis:                      19.188   Cond. No.                     3.49e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.49e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.

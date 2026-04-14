@@ -1,0 +1,7 @@
+Variable,r Pearson,p-value,Sig.,Interpretación
+Tasa de atracción,0.6215,0.0,***,Correlación positiva fuerte
+Compraventas per cápita,-0.0729,0.01411,*,Correlación negativa débil
+Cobertura 100Mbps (%),-0.0936,0.00161,**,Correlación negativa débil
+Viajeros (turismo),-0.3949,0.0,***,Correlación negativa moderada
+Población provincia,-0.4568,0.0,***,Correlación negativa moderada
+Compraventas vivienda,-0.4574,0.0,***,Correlación negativa moderada

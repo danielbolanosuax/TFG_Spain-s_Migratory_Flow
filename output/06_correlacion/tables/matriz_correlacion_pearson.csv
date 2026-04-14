@@ -1,0 +1,8 @@
+,saldo_neto,compraventas_vivienda,cob_100mbps_pct,poblacion_provincia,viajeros,tasa_atraccion,compraventas_per_capita
+saldo_neto,1.0,-0.457,-0.094,-0.457,-0.395,0.622,-0.073
+compraventas_vivienda,-0.457,1.0,0.422,0.812,0.7,-0.492,0.4
+cob_100mbps_pct,-0.094,0.422,1.0,0.338,0.155,-0.135,0.292
+poblacion_provincia,-0.457,0.812,0.338,1.0,0.607,-0.478,-0.051
+viajeros,-0.395,0.7,0.155,0.607,1.0,-0.388,0.273
+tasa_atraccion,0.622,-0.492,-0.135,-0.478,-0.388,1.0,-0.112
+compraventas_per_capita,-0.073,0.4,0.292,-0.051,0.273,-0.112,1.0

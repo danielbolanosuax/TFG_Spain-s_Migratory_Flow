@@ -1,0 +1,4 @@
+Modelo,Variables independientes,R²,R² adj / within,AIC,N obs
+OLS Base,compraventas + cobertura + población,0.4104,0.4091,29582.5,1377
+OLS Extendido,compraventas + cobertura + población + compraventas_pc,0.4115,0.4098,29581.9,1377
+Panel FE (clustered SE),compraventas + cobertura + compraventas_pc (FE provincia),0.0023,0.0023,—,1377
