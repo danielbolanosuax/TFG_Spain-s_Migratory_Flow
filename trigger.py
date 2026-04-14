@@ -1,6 +1,6 @@
 """
 trigger.py — Pipeline completo TFG Spain's Migratory Flow
-Orden: recolección → 01_exploracion → 02_limpieza → 03_visualizacion → 04_merge
+Orden: recolección → 01_exploracion → 02_limpieza → 03_visualizacion → 04_merge → 05_insights
 """
 
 import os
@@ -22,8 +22,6 @@ LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / f"trigger_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
 
-# ── Pipeline organizado por fases ─────────────────────────────────────────────
-# Cada fase es bloqueante: si falla un notebook, se aborta esa fase y las siguientes.
 FASES = {
     "01_exploracion": [
         "notebooks/01_exploracion/01_economico.ipynb",
@@ -34,7 +32,7 @@ FASES = {
     "02_limpieza": [
         "notebooks/02_limpieza/02_ambiental.ipynb",
         "notebooks/02_limpieza/02_economico.ipynb",
-        "notebooks/02_limpieza/02_concectividad.ipynb",   # typo original del archivo
+        "notebooks/02_limpieza/02_concectividad.ipynb",
         "notebooks/02_limpieza/02_evr.ipynb",
     ],
     "03_visualizacion": [
@@ -107,7 +105,7 @@ def run_notebook(nb_path: str) -> bool:
     nb = ROOT / nb_path
     if not nb.exists():
         log(f"⚠️  Notebook no encontrado, saltando: {nb_path}")
-        return True   # no bloqueante si simplemente no existe
+        return True
     return run_step(
         nb.name,
         [
@@ -119,6 +117,19 @@ def run_notebook(nb_path: str) -> bool:
             "--ExecutePreprocessor.kernel_name=python3",
             str(nb)
         ]
+    )
+
+
+def run_insights() -> bool:
+    """Ejecuta run_insights.py si existe."""
+    script = ROOT / "run_insights.py"
+    if not script.exists():
+        log("⚠️  run_insights.py no encontrado, saltando fase insights.")
+        return True
+    log("── FASE: 05_insights ──")
+    return run_step(
+        "run_insights.py",
+        [PYTHON, str(script)]
     )
 
 
@@ -147,11 +158,16 @@ def main():
                 failed_total.append(nb)
                 fase_ok = False
                 log(f"🛑 Fallo crítico en {nb}. Abortando fase '{fase}' y siguientes.")
-                break   # aborta esta fase
+                break
 
         if not fase_ok:
             log(f"⛔ Pipeline detenido en fase '{fase}'.")
-            break       # aborta todas las fases siguientes
+            break
+
+    # ── PASO 6: Insights (solo si fases anteriores OK) ───────
+    if not failed_total:
+        if not run_insights():
+            failed_total.append("run_insights.py")
 
     # ── Resumen ───────────────────────────────────────────────
     log("\n" + "=" * 60)
