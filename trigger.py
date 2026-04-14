@@ -13,9 +13,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
 
-VENV_PYTHON = str(ROOT / ".venv" / "bin" / "python")
-assert Path(VENV_PYTHON).exists(), f"❌ No se encuentra el venv en {VENV_PYTHON}"
-PYTHON = VENV_PYTHON
+# ✅ DESPUÉS — funciona en local Y en GitHub Actions
+VENV_PYTHON = ROOT / ".venv" / "bin" / "python"
+PYTHON = str(VENV_PYTHON) if VENV_PYTHON.exists() else sys.executable
 
 LOG_DIR = ROOT / "output" / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
