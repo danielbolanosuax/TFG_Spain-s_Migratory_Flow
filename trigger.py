@@ -1,6 +1,6 @@
 """
 trigger.py — Pipeline completo TFG Spain's Migratory Flow
-Orden: scheduler → 01_exploracion → 02_limpieza → 03_visualizacion
+Orden: recolección → 01_exploracion → 02_limpieza → 03_visualizacion → 04_merge
 """
 
 import os
@@ -9,10 +9,10 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
+
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
 
-# Cambia estas líneas al principio del trigger.py
 VENV_PYTHON = str(ROOT / ".venv" / "bin" / "python")
 assert Path(VENV_PYTHON).exists(), f"❌ No se encuentra el venv en {VENV_PYTHON}"
 PYTHON = VENV_PYTHON
@@ -21,22 +21,33 @@ LOG_DIR = ROOT / "output" / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / f"trigger_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
-NOTEBOOKS = [
-    # ── FASE 1: Exploración ───────────────────────────────────
-    "notebooks/01_exploracion/01_economico.ipynb",
-    "notebooks/01_exploracion/01_ambiental.ipynb",
-    "notebooks/01_exploracion/01_conectividad.ipynb",
-    "notebooks/01_exploracion/01_evr.ipynb",
 
-    # ── FASE 2: Limpieza ──────────────────────────────────────
-    "notebooks/02_limpieza/02_ambiental.ipynb",
-    "notebooks/02_limpieza/02_economico.ipynb",
-    "notebooks/02_limpieza/02_concectividad.ipynb",   # ← typo original del archivo
-    "notebooks/02_limpieza/02_evr.ipynb",
+# ── Pipeline organizado por fases ─────────────────────────────────────────────
+# Cada fase es bloqueante: si falla un notebook, se aborta esa fase y las siguientes.
+FASES = {
+    "01_exploracion": [
+        "notebooks/01_exploracion/01_economico.ipynb",
+        "notebooks/01_exploracion/01_ambiental.ipynb",
+        "notebooks/01_exploracion/01_conectividad.ipynb",
+        "notebooks/01_exploracion/01_evr.ipynb",
+    ],
+    "02_limpieza": [
+        "notebooks/02_limpieza/02_ambiental.ipynb",
+        "notebooks/02_limpieza/02_economico.ipynb",
+        "notebooks/02_limpieza/02_concectividad.ipynb",   # typo original del archivo
+        "notebooks/02_limpieza/02_evr.ipynb",
+    ],
+    "03_visualizacion": [
+        "notebooks/03_visualizacion/03_ambiental.ipynb",
+        "notebooks/03_visualizacion/03_economico.ipynb",
+        "notebooks/03_visualizacion/03_conectividad.ipynb",
+        "notebooks/03_visualizacion/03_evr.ipynb",
+    ],
+    "04_merge": [
+        "notebooks/04_merge/04_merge.ipynb",
+    ],
+}
 
-    # ── FASE 3: aún no existe, se saltarán ───────────────────
-    # "notebooks/03_visualizacion/03_merge_maestro.ipynb",
-]
 
 def log(msg: str):
     ts = datetime.now().strftime("%H:%M:%S")
@@ -44,6 +55,7 @@ def log(msg: str):
     print(line)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(line + "\n")
+
 
 def run_step(label: str, cmd: list) -> bool:
     log(f"▶  {label}")
@@ -55,6 +67,7 @@ def run_step(label: str, cmd: list) -> bool:
         log(f"❌ FALLO — {label}")
         log(result.stderr[-2000:])
         return False
+
 
 def run_scheduler_once():
     log("── PASO 1: Recolección de datos (job_diario) ──")
@@ -68,9 +81,9 @@ from datetime import datetime
 from pathlib import Path
 
 def save_json(categoria, datos):
-    fecha = datetime.now().strftime("%d_%m_%Y")
-    anio  = datetime.now().strftime("%Y")
-    mes   = datetime.now().strftime("%m")
+    fecha   = datetime.now().strftime("%d_%m_%Y")
+    anio    = datetime.now().strftime("%Y")
+    mes     = datetime.now().strftime("%m")
     carpeta = Path(f"data/{categoria}/{anio}/{mes}")
     carpeta.mkdir(parents=True, exist_ok=True)
     ruta = carpeta / f"{fecha}.json"
@@ -89,11 +102,12 @@ print("🏁 Recolección completada.")
         [PYTHON, "-c", script]
     )
 
+
 def run_notebook(nb_path: str) -> bool:
     nb = ROOT / nb_path
     if not nb.exists():
         log(f"⚠️  Notebook no encontrado, saltando: {nb_path}")
-        return True
+        return True   # no bloqueante si simplemente no existe
     return run_step(
         nb.name,
         [
@@ -107,6 +121,7 @@ def run_notebook(nb_path: str) -> bool:
         ]
     )
 
+
 def main():
     log("=" * 60)
     log(f"🚀 TRIGGER INICIADO — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -115,34 +130,40 @@ def main():
     log("=" * 60)
 
     # ── PASO 1: Recolección ───────────────────────────────────
-    ok = run_scheduler_once()
-    if not ok:
+    if not run_scheduler_once():
         log("🛑 Fallo en recolección. Abortando pipeline.")
         sys.exit(1)
 
-    # ── PASO 2+3: Notebooks en orden ─────────────────────────
-    log("\n── PASO 2/3: Ejecutando notebooks ──")
-    failed = []
-    for nb in NOTEBOOKS:
-        ok = run_notebook(nb)
-        if not ok:
-            failed.append(nb)
-            # Fase 1 (exploracion) y Fase 2 (limpieza) son bloqueantes entre sí
-            # Si falla un 02_, no tiene sentido ejecutar el 03_
-            if "03_visualizacion" not in nb and not ok:
-                log(f"🛑 Fallo crítico en {nb}. Abortando resto del pipeline.")
-                break
+    # ── PASOS 2–5: Fases de notebooks ────────────────────────
+    failed_total = []
+
+    for fase, notebooks in FASES.items():
+        log(f"\n── FASE: {fase} ──")
+        fase_ok = True
+
+        for nb in notebooks:
+            ok = run_notebook(nb)
+            if not ok:
+                failed_total.append(nb)
+                fase_ok = False
+                log(f"🛑 Fallo crítico en {nb}. Abortando fase '{fase}' y siguientes.")
+                break   # aborta esta fase
+
+        if not fase_ok:
+            log(f"⛔ Pipeline detenido en fase '{fase}'.")
+            break       # aborta todas las fases siguientes
 
     # ── Resumen ───────────────────────────────────────────────
     log("\n" + "=" * 60)
-    if not failed:
+    if not failed_total:
         log("🎉 PIPELINE COMPLETADO SIN ERRORES")
     else:
-        log(f"⚠️  PIPELINE COMPLETADO CON {len(failed)} FALLOS:")
-        for f in failed:
+        log(f"⚠️  PIPELINE COMPLETADO CON {len(failed_total)} FALLOS:")
+        for f in failed_total:
             log(f"   ❌ {f}")
     log(f"📋 Log: {LOG_FILE}")
     log("=" * 60)
+
 
 if __name__ == "__main__":
     main()
