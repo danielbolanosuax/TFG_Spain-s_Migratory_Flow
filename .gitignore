@@ -15,3 +15,8 @@ __pycache__/
 
 # Variables de entorno
 .env
+
+# Excepción: datos estáticos de conectividad (vía Git LFS)
+!data/conectividad/
+!data/conectividad/setid/
+!data/conectividad/setid/*.xlsx
