@@ -18,11 +18,15 @@ on:
       - "trigger.py"
       - "run_insights.py"
       - "notebooks/05_insights/**"
+      - "requirements.txt"
 
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+
+    permissions:
+      contents: write
 
     env:
       AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
