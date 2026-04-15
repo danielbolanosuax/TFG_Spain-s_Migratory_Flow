@@ -1,1 +1,2 @@
 *.xlsx filter=lfs diff=lfs merge=lfs -text
+data/evr/*.json filter=lfs diff=lfs merge=lfs -text
