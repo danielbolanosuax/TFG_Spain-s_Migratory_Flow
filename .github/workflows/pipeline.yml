@@ -4,7 +4,7 @@ name: TFG Pipeline - Ingest + Merge + Insights
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 1 * *"
+    - cron: "0 5 * * *"  # Todos los días a las 05:00 UTC (07:00 hora española)
   push:
     branches: [main]
     paths:
@@ -32,17 +32,6 @@ jobs:
         with:
           lfs: true
 
-      - name: DEBUG - verificar requirements.txt y LFS
-        run: |
-          echo "=== tail requirements.txt ==="
-          tail -10 requirements.txt
-          echo "=== scipy en requirements ==="
-          grep -i scipy requirements.txt || echo "NO ENCONTRADO"
-          echo "=== xlsx en data/conectividad/setid ==="
-          ls -lh data/conectividad/setid/ 2>/dev/null || echo "CARPETA NO EXISTE"
-          echo "=== git lfs ls-files ==="
-          git lfs ls-files
-
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
@@ -50,11 +39,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      - name: DEBUG - verificar scipy instalado
-        run: |
-          pip show scipy || echo "scipy NO instalado"
-          python -c "from scipy import stats; print('scipy OK')"
 
       - name: Create output dirs
         run: |
