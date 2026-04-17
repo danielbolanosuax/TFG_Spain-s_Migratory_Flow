@@ -3,8 +3,8 @@
 Dep. Variable:             saldo_neto   R-squared:                       0.410
 Model:                            OLS   Adj. R-squared:                  0.409
 Method:                 Least Squares   F-statistic:                     318.5
-Date:                Thu, 16 Apr 2026   Prob (F-statistic):          6.14e-157
-Time:                        07:07:16   Log-Likelihood:                -14787.
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):          6.14e-157
+Time:                        07:05:59   Log-Likelihood:                -14787.
 No. Observations:                1377   AIC:                         2.958e+04
 Df Residuals:                    1373   BIC:                         2.960e+04
 Df Model:                           3                                         
