@@ -20,3 +20,10 @@ __pycache__/
 !data/conectividad/
 !data/conectividad/setid/
 !data/conectividad/setid/*.xlsx
+
+
+# Añadir excepciones para las carpetas nuevas
+echo "!data/fondo_monetario_internacional/" >> .gitignore
+echo "!data/fondo_monetario_internacional/**" >> .gitignore
+echo "!data/renta/" >> .gitignore
+echo "!data/renta/**" >> .gitignore
