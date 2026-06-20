@@ -186,6 +186,12 @@ def run_insights() -> bool:
 # MAIN
 # ─────────────────────────────────────────────────────────────
 def main():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--skip-collection', action='store_true',
+                        help='Salta el PASO 1 de recolección (no gasta peticiones)')
+    args = parser.parse_args()
+
     log("=" * 60)
     log(f"🚀 TRIGGER INICIADO — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     log(f"📁 ROOT: {ROOT}")
@@ -193,9 +199,12 @@ def main():
     log("=" * 60)
 
     # ── PASO 1: Recolección ───────────────────────────────────
-    if not run_coleccion():
-        log("🛑 Fallo crítico en recolección. Abortando pipeline.")
-        sys.exit(1)
+    if args.skip_collection:
+        log("⏭️  PASO 1 saltado (--skip-collection)")
+    else:
+        if not run_scheduler_once():
+            log("🛑 Fallo en recolección. Abortando pipeline.")
+            sys.exit(1)
 
     # ── PASOS 2–5: Fases de notebooks ────────────────────────
     failed_total = []
