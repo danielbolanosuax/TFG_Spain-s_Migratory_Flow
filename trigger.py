@@ -1,20 +1,11 @@
 """
 trigger.py — Pipeline completo TFG Spain's Migratory Flow
 Orden: recolección → 01_exploracion → 02_limpieza → 03_visualizacion → 04_merge → 05_insights
-
-Collectors incluidos en PASO 1:
-  - economico   (INE, Catastro, Ministerio Vivienda)
-  - ambiental   (AEMET, calidad aire)
-  - idealista   (API v3.5 — precios vivienda en tiempo real, máx 100 req/mes)
-
-Notebooks idelaista incluidos en fases 01→03:
-  - 01_exploracion/01_idealista.ipynb
-  - 02_limpieza/02_idealista.ipynb
-  - 03_visualizacion/03_idealista.ipynb
 """
 
 import os
 import sys
+import json
 import subprocess
 from datetime import datetime
 from pathlib import Path
@@ -23,14 +14,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
 
+
 VENV_PYTHON = ROOT / ".venv" / "bin" / "python"
 PYTHON = str(VENV_PYTHON) if VENV_PYTHON.exists() else sys.executable
+
 
 LOG_DIR = ROOT / "output" / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / f"trigger_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
 
+# ─────────────────────────────────────────────────────────────
+# FASES DE NOTEBOOKS
+# ─────────────────────────────────────────────────────────────
 FASES = {
     "01_exploracion": [
         "notebooks/01_exploracion/01_economico.ipynb",
@@ -59,6 +55,9 @@ FASES = {
 }
 
 
+# ─────────────────────────────────────────────────────────────
+# LOGGER
+# ─────────────────────────────────────────────────────────────
 def log(msg: str):
     ts = datetime.now().strftime("%H:%M:%S")
     line = f"[{ts}] {msg}"
@@ -67,6 +66,9 @@ def log(msg: str):
         f.write(line + "\n")
 
 
+# ─────────────────────────────────────────────────────────────
+# RUNNER DE COMANDOS
+# ─────────────────────────────────────────────────────────────
 def run_step(label: str, cmd: list) -> bool:
     log(f"▶  {label}")
     result = subprocess.run(cmd, capture_output=True, text=True)
@@ -79,74 +81,81 @@ def run_step(label: str, cmd: list) -> bool:
         return False
 
 
-def run_scheduler_once():
-    """
-    PASO 1 — Recolección de datos.
-    Ejecuta todos los collectors en un único subproceso Python para evitar
-    bloqueos del scheduler. Idealista se ejecuta con manejo de límite mensual:
-    si el límite de 100 req/mes ya fue alcanzado, el collector lo comunica
-    en el JSON de salida pero NO aborta el pipeline — los demás collectors
-    siguen ejecutándose con normalidad.
-    """
-    log("── PASO 1: Recolección de datos ──")
-    script = """
-import sys, os
-sys.path.insert(0, os.getcwd())
-
-from collectors.economico  import collect_economico
-from collectors.ambiental  import collect_ambiental
-from collectors.idealista  import collect_idealista   # ← NUEVO
-
-import json
-from datetime import datetime
-from pathlib import Path
-
-
-def save_json(categoria, datos):
+# ─────────────────────────────────────────────────────────────
+# PASO 1: RECOLECCIÓN DE DATOS
+# Incluye: economico, ambiental, conectividad, evr, idealista
+# ─────────────────────────────────────────────────────────────
+def save_json(categoria: str, datos: dict):
+    """Guarda el JSON de un collector en data/{categoria}/{año}/{mes}/{fecha}.json"""
     fecha   = datetime.now().strftime("%d_%m_%Y")
     anio    = datetime.now().strftime("%Y")
     mes     = datetime.now().strftime("%m")
-    carpeta = Path(f"data/{categoria}/{anio}/{mes}")
+    carpeta = ROOT / "data" / categoria / anio / mes
     carpeta.mkdir(parents=True, exist_ok=True)
     ruta = carpeta / f"{fecha}.json"
     with open(ruta, "w", encoding="utf-8") as f:
         json.dump(datos, f, ensure_ascii=False, indent=2)
-    print(f"✅ Guardado: {ruta}")
+    log(f"💾 Guardado: {ruta.relative_to(ROOT)}")
 
 
-print("📦 Económico...")
-save_json("economico", collect_economico())
+def run_coleccion() -> bool:
+    """
+    Ejecuta todos los collectors directamente en el mismo proceso.
+    Ventaja: más rápido, logs visibles, errores claros.
+    """
+    log("── PASO 1: Recolección de datos ──")
 
-print("🌿 Ambiental...")
-save_json("ambiental", collect_ambiental())
+    sys.path.insert(0, str(ROOT))
 
-print("🏠 Idealista (precios vivienda)...")
-try:
-    resultado = collect_idealista()
-    save_json("idealista", resultado)
-    # Advertir si se acercó al límite mensual pero sin abortar el pipeline
-    usadas = resultado.get("peticiones_usadas_este_mes", 0)
-    if usadas and usadas >= 80:
-        print(f"⚠️  AVISO: {usadas}/100 peticiones Idealista usadas este mes.")
-    if "advertencia" in resultado:
-        print(f"⚠️  {resultado['advertencia']}")
-except Exception as e:
-    # Límite alcanzado u otro error — se loguea pero NO se aborta el pipeline
-    print(f"⚠️  Idealista saltado: {e}")
+    collectors = [
+        ("economico",   "collectors.economico",   "collect_economico",  "📈"),
+        ("ambiental",   "collectors.ambiental",   "collect_ambiental",  "🌿"),
+        ("conectividad","collectors.conectividad", "collect_conectividad","🔗"),
+        ("evr",         "collectors.evr",          "collect",            "🧭"),
+        ("idealista",   "collectors.idealista",    "collect_idealista",  "🏠"),
+    ]
 
-print("🏁 Recolección completada.")
-"""
-    return run_step(
-        "job_diario (economico + ambiental + idealista)",
-        [PYTHON, "-c", script]
-    )
+    fallos = []
+
+    for categoria, modulo, funcion, emoji in collectors:
+        log(f"{emoji} Recolectando {categoria}...")
+        try:
+            import importlib
+            mod = importlib.import_module(modulo)
+
+            # Recarga el módulo para evitar caché en ejecuciones repetidas
+            importlib.reload(mod)
+
+            fn = getattr(mod, funcion)
+            datos = fn()
+            save_json(categoria, datos)
+            log(f"✅ {categoria} — OK")
+
+        except Exception as e:
+            log(f"❌ {categoria} — ERROR: {e}")
+            fallos.append(categoria)
+
+    if fallos:
+        log(f"⚠️  Collectors con fallos: {fallos}")
+        # No abortamos el pipeline por fallos en collectors secundarios,
+        # pero sí si falla economico o evr (pilares del análisis)
+        criticos = [f for f in fallos if f in ("economico", "evr")]
+        if criticos:
+            log(f"🛑 Fallo en collectors críticos {criticos}. Abortando.")
+            return False
+        log("ℹ️  Fallos en collectors no críticos — el pipeline continúa.")
+
+    return True
 
 
+# ─────────────────────────────────────────────────────────────
+# RUNNER DE NOTEBOOKS
+# ─────────────────────────────────────────────────────────────
 def run_notebook(nb_path: str) -> bool:
     nb = ROOT / nb_path
     if not nb.exists():
         log(f"⚠️  Notebook no encontrado, saltando: {nb_path}")
-        return True
+        return True   # No bloqueamos el pipeline por notebooks opcionales
     return run_step(
         nb.name,
         [
@@ -156,24 +165,26 @@ def run_notebook(nb_path: str) -> bool:
             "--inplace",
             "--ExecutePreprocessor.timeout=600",
             "--ExecutePreprocessor.kernel_name=python3",
-            str(nb)
+            str(nb),
         ]
     )
 
 
+# ─────────────────────────────────────────────────────────────
+# FASE INSIGHTS
+# ─────────────────────────────────────────────────────────────
 def run_insights() -> bool:
-    """Ejecuta run_insights.py si existe."""
     script = ROOT / "run_insights.py"
     if not script.exists():
         log("⚠️  run_insights.py no encontrado, saltando fase insights.")
         return True
     log("── FASE: 05_insights ──")
-    return run_step(
-        "run_insights.py",
-        [PYTHON, str(script)]
-    )
+    return run_step("run_insights.py", [PYTHON, str(script)])
 
 
+# ─────────────────────────────────────────────────────────────
+# MAIN
+# ─────────────────────────────────────────────────────────────
 def main():
     log("=" * 60)
     log(f"🚀 TRIGGER INICIADO — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -182,8 +193,8 @@ def main():
     log("=" * 60)
 
     # ── PASO 1: Recolección ───────────────────────────────────
-    if not run_scheduler_once():
-        log("🛑 Fallo en recolección. Abortando pipeline.")
+    if not run_coleccion():
+        log("🛑 Fallo crítico en recolección. Abortando pipeline.")
         sys.exit(1)
 
     # ── PASOS 2–5: Fases de notebooks ────────────────────────
@@ -198,7 +209,7 @@ def main():
             if not ok:
                 failed_total.append(nb)
                 fase_ok = False
-                log(f"🛑 Fallo crítico en {nb}. Abortando fase '{fase}' y siguientes.")
+                log(f"🛑 Fallo en {nb}. Abortando fase '{fase}' y siguientes.")
                 break
 
         if not fase_ok:
@@ -210,7 +221,7 @@ def main():
         if not run_insights():
             failed_total.append("run_insights.py")
 
-    # ── Resumen ───────────────────────────────────────────────
+    # ── Resumen final ─────────────────────────────────────────
     log("\n" + "=" * 60)
     if not failed_total:
         log("🎉 PIPELINE COMPLETADO SIN ERRORES")
@@ -218,7 +229,7 @@ def main():
         log(f"⚠️  PIPELINE COMPLETADO CON {len(failed_total)} FALLOS:")
         for f in failed_total:
             log(f"   ❌ {f}")
-    log(f"📋 Log: {LOG_FILE}")
+    log(f"📋 Log completo: {LOG_FILE}")
     log("=" * 60)
 
 
