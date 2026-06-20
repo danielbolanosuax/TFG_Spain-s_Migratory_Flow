@@ -27,3 +27,16 @@ echo "!data/fondo_monetario_internacional/" >> .gitignore
 echo "!data/fondo_monetario_internacional/**" >> .gitignore
 echo "!data/renta/" >> .gitignore
 echo "!data/renta/**" >> .gitignore
+# Datasets CSV nuevos
+
+# Datasets CSV nuevos
+!data/renta_ine/
+!data/renta_ine/**
+!data/fondo_monetario_internacional/
+!data/fondo_monetario_internacional/**
+
+# Datasets CSV nuevos
+!data/renta_ine/
+!data/renta_ine/**
+!data/fondo_monetario_internacional/
+!data/fondo_monetario_internacional/**
