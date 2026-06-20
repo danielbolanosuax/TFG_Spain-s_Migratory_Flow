@@ -9,16 +9,16 @@ import json
 import os
 from datetime import datetime
 
-# ──────────────────────────────────────────────
-# CREDENCIALES (ya están en tu .env del proyecto)
-# ──────────────────────────────────────────────
-API_KEY = os.getenv("IDEALISTA_API_KEY", "eynr8cy6j091vrd385j1i44fxyvzr8bs")
-SECRET   = os.getenv("IDEALISTA_SECRET",  "UUBIW2zTpJEC")
 
 # ──────────────────────────────────────────────
-# CIUDADES OBJETIVO — adaptadas a tu análisis migratorio
-# Cada ciudad = 2 peticiones (sale + rent) = 14 peticiones/mes
-# Quedan 86 peticiones de margen para el resto del mes
+# CREDENCIALES
+# ──────────────────────────────────────────────
+API_KEY = os.getenv("IDEALISTA_API_KEY", "eynr8cy6j091vrd385j1i44fxyvzr8bs")
+SECRET  = os.getenv("IDEALISTA_SECRET",  "UUBIW2zTpJEC")
+
+
+# ──────────────────────────────────────────────
+# CIUDADES OBJETIVO
 # ──────────────────────────────────────────────
 CITIES = {
     "madrid":    "40.416775,-3.703790",
@@ -30,18 +30,18 @@ CITIES = {
     "bilbao":    "43.263012,-2.934985",
 }
 
+
 # ──────────────────────────────────────────────
-# CONTROL DE PETICIONES — archivo de log mensual
-# Se guarda en data/ igual que el resto de tu proyecto
+# CONTROL DE PETICIONES
 # ──────────────────────────────────────────────
 REQUESTS_LOG = os.path.join(
     os.path.dirname(__file__), "..", "data", "idealista_requests_log.json"
 )
-MAX_MONTHLY = 100
+MAX_MONTHLY   = 100
+SAFETY_BUFFER = 20  # Nunca gastar las últimas 20 — reserva de emergencia
 
 
 def _load_log():
-    """Lee el log de peticiones del mes actual."""
     if os.path.exists(REQUESTS_LOG):
         with open(REQUESTS_LOG) as f:
             return json.load(f)
@@ -54,50 +54,54 @@ def _save_log(log):
         json.dump(log, f, indent=2)
 
 
-def _check_and_register_request():
+def _check_and_register_request(dry_run=False):
     """
-    Verifica que no hemos superado las 100 peticiones del mes.
-    Si todo OK, registra la petición y devuelve True.
-    Si se supera el límite, lanza una excepción — no hace la llamada.
+    Verifica el límite mensual con buffer de seguridad.
+    dry_run=True → solo comprueba, NO registra ni gasta petición.
+    Lanza Exception si se supera el límite efectivo (MAX - SAFETY_BUFFER).
     """
-    month_key = datetime.now().strftime("%Y-%m")
-    log = _load_log()
-    count = log.get(month_key, 0)
+    month_key      = datetime.now().strftime("%Y-%m")
+    log            = _load_log()
+    count          = log.get(month_key, 0)
+    limite_efectivo = MAX_MONTHLY - SAFETY_BUFFER  # 80 peticiones reales disponibles
 
     if count >= MAX_MONTHLY:
         raise Exception(
-            f"⛔ LÍMITE ALCANZADO: {count}/{MAX_MONTHLY} peticiones en {month_key}. "
-            f"No se realizará ninguna llamada más hasta el próximo mes."
+            f"⛔ LÍMITE TOTAL alcanzado: {count}/{MAX_MONTHLY} en {month_key}. "
+            f"Reinicia el mes o contacta con Idealista."
         )
+
+    if count >= limite_efectivo:
+        raise Exception(
+            f"⚠️  BUFFER DE SEGURIDAD activado: {count}/{MAX_MONTHLY} usadas. "
+            f"Quedan solo {MAX_MONTHLY - count} (buffer reservado: {SAFETY_BUFFER}). "
+            f"No se ejecutará hasta el próximo mes para proteger el límite."
+        )
+
+    if dry_run:
+        print(f"  🔍 [DRY RUN] Sería petición {count + 1}/{MAX_MONTHLY} — no registrada")
+        return count
 
     log[month_key] = count + 1
     _save_log(log)
-    print(f"  📊 Petición {count + 1}/{MAX_MONTHLY} del mes {month_key}")
+    print(f"  📊 Petición {count + 1}/{MAX_MONTHLY} | quedan {MAX_MONTHLY - count - 1} "
+          f"({SAFETY_BUFFER} en buffer reservado)")
     return count + 1
 
 
 # ──────────────────────────────────────────────
 # AUTENTICACIÓN OAuth2
-# Según documentación: POST /oauth/token con credenciales en Base64
 # ──────────────────────────────────────────────
 def get_token():
-    """
-    Obtiene el Bearer Token de Idealista.
-    El token dura ~12 horas (43.199 segundos según la documentación).
-    Esta llamada NO cuenta en el límite de 100 — es de autenticación.
-    """
     credentials = f"{API_KEY}:{SECRET}"
-    encoded = base64.b64encode(credentials.encode()).decode()
+    encoded     = base64.b64encode(credentials.encode()).decode()
 
-    url = "https://api.idealista.com/oauth/token"
+    url     = "https://api.idealista.com/oauth/token"
     headers = {
         "Authorization": f"Basic {encoded}",
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        "Content-Type":  "application/x-www-form-urlencoded;charset=UTF-8",
     }
-    data = {
-        "grant_type": "client_credentials",
-        "scope": "read",   # Solo lectura — lo único que necesitamos
-    }
+    data = "grant_type=client_credentials&scope=read"
 
     try:
         r = requests.post(url, headers=headers, data=data, timeout=30)
@@ -110,59 +114,51 @@ def get_token():
 
 
 # ──────────────────────────────────────────────
-# LLAMADA A LA API DE BÚSQUEDA
-# Endpoint documentado: POST /3.5/es/search
+# BÚSQUEDA
+# multipart/form-data con requests requiere files={}, NO data={}
+# Cada campo va como (None, valor) — así curl -F lo hace internamente
+# NO se pone Content-Type manualmente — requests genera el boundary correcto
 # ──────────────────────────────────────────────
-def search_properties(token, center, operation="sale", page=1):
-    """
-    Búsqueda de propiedades por coordenadas.
-    - center: "latitud,longitud" en WGS84 (obligatorio según documentación)
-    - operation: "sale" o "rent" (únicos valores permitidos)
-    - maxItems: 50 (máximo permitido por la API)
-    - Cada llamada a esta función = 1 petición de las 100 mensuales
-    """
-    _check_and_register_request()   # ← Verifica límite ANTES de llamar
+def search_properties(token, center, operation="sale", page=1, dry_run=False):
+    _check_and_register_request(dry_run=dry_run)
 
-    url = "https://api.idealista.com/3.5/es/search"
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Content-Type": "multipart/form-data",
-    }
-    params = {
-        "center":       center,
-        "distance":     15000,       # 15 km de radio
-        "propertyType": "homes",     # viviendas residenciales
-        "operation":    operation,
-        "maxItems":     50,          # máximo que permite la API
-        "numPage":      page,
-        "country":      "es",
-        "locale":       "es",
+    if dry_run:
+        print(f"  🔍 [DRY RUN] Simularía: center={center} op={operation} pág={page}")
+        return {"elementList": [], "total": 0, "_dry_run": True}
+
+    url     = "https://api.idealista.com/3.5/es/search"
+    headers = {"Authorization": f"Bearer {token}"}
+    files   = {
+        "center":       (None, center),
+        "distance":     (None, "15000"),
+        "propertyType": (None, "homes"),
+        "operation":    (None, operation),
+        "maxItems":     (None, "50"),
+        "numPage":      (None, str(page)),
+        "country":      (None, "es"),
+        "locale":       (None, "es"),
     }
 
     try:
-        r = requests.post(url, headers=headers, data=params, timeout=30)
+        r = requests.post(url, headers=headers, files=files, timeout=30)
         r.raise_for_status()
         return r.json()
     except requests.exceptions.HTTPError as e:
-        return {"error": f"HTTP {r.status_code}: {r.text[:200]}"}
+        return {"error": f"HTTP {r.status_code}: {r.text[:300]}"}
     except Exception as e:
         return {"error": str(e)}
 
 
 # ──────────────────────────────────────────────
-# PROCESADO — extrae los campos relevantes para el TFG
+# PROCESADO
 # ──────────────────────────────────────────────
 def _parse_elements(elements, city, operation, snapshot_date):
-    """
-    Transforma la lista de anuncios en filas planas.
-    Solo extrae los campos útiles para análisis de migración + vivienda.
-    """
     rows = []
     for item in elements:
         price = item.get("price")
         size  = item.get("size")
         if not price or not size:
-            continue   # Descarta anuncios sin precio ni tamaño
+            continue
         rows.append({
             "snapshot_date":  snapshot_date,
             "city":           city,
@@ -189,25 +185,26 @@ def _parse_elements(elements, city, operation, snapshot_date):
 
 
 # ──────────────────────────────────────────────
-# FUNCIÓN PRINCIPAL — collect_idealista()
-# Mismo patrón que collect_economico() en economico.py
+# FUNCIÓN PRINCIPAL
 # ──────────────────────────────────────────────
-def collect_idealista():
+def collect_idealista(dry_run=False):
     """
-    Recoge precios de vivienda de las principales ciudades españolas.
-    Ejecuta: 7 ciudades × 2 operaciones = 14 peticiones al mes.
-    Guarda un snapshot JSON en data/ (igual que el resto de collectors).
+    Recoge precios de vivienda de Idealista para las 7 ciudades objetivo.
+    dry_run=True → simula todo el flujo sin hacer llamadas reales (0 peticiones).
     """
+    if dry_run:
+        print("  🔍 [DRY RUN] Modo simulación — no se gastarán peticiones")
+
     snapshot_date = datetime.now().strftime("%Y-%m-%d")
     result = {
-        "timestamp":     datetime.now().isoformat(),
-        "snapshot_date": snapshot_date,
-        "fuente":        "Idealista API v3.5",
+        "timestamp":                  datetime.now().isoformat(),
+        "snapshot_date":              snapshot_date,
+        "fuente":                     "Idealista API v3.5",
         "peticiones_usadas_este_mes": None,
-        "ciudades": {}
+        "dry_run":                    dry_run,
+        "ciudades":                   {},
     }
 
-    # Obtener token una sola vez para todas las ciudades
     print("  🔑 Autenticando en Idealista API...")
     token = get_token()
     if isinstance(token, dict) and "error" in token:
@@ -222,46 +219,51 @@ def collect_idealista():
         for operation in ["sale", "rent"]:
             print(f"  🏘️  {city.upper()} — {operation}...")
             try:
-                data = search_properties(token, center, operation=operation)
+                data = search_properties(token, center, operation=operation, dry_run=dry_run)
+
+                # Dry run — no hay datos reales, saltar
+                if data.get("_dry_run"):
+                    result["ciudades"][city][operation] = {"dry_run": True}
+                    continue
 
                 if "error" in data:
                     print(f"  ❌ Error: {data['error']}")
                     result["ciudades"][city][operation] = {"error": data["error"]}
                     continue
 
-                total     = data.get("total", 0)
-                elements  = data.get("elementList", [])
-                rows      = _parse_elements(elements, city, operation, snapshot_date)
+                elements       = data.get("elementList", [])
+                rows           = _parse_elements(elements, city, operation, snapshot_date)
                 all_rows.extend(rows)
 
+                precio_m2_vals = [r["price_m2"] for r in rows]
                 result["ciudades"][city][operation] = {
-                    "total_anuncios_mercado": total,
+                    "total_anuncios_mercado": data.get("total", 0),
                     "anuncios_capturados":    len(rows),
-                    "precio_medio_m2":        round(
-                        sum(r["price_m2"] for r in rows) / len(rows), 2
-                    ) if rows else None,
-                    "precio_mediano_m2":      sorted(
-                        [r["price_m2"] for r in rows]
-                    )[len(rows) // 2] if rows else None,
+                    "precio_medio_m2":   round(sum(precio_m2_vals) / len(precio_m2_vals), 2) if precio_m2_vals else None,
+                    "precio_mediano_m2": sorted(precio_m2_vals)[len(precio_m2_vals) // 2]    if precio_m2_vals else None,
                 }
-                print(f"  → {len(rows)} anuncios | precio medio {result['ciudades'][city][operation]['precio_medio_m2']} €/m²")
+                print(f"  → {len(rows)} anuncios | "
+                      f"precio medio {result['ciudades'][city][operation]['precio_medio_m2']} €/m²")
 
             except Exception as e:
-                # Si se agota el límite mensual, para todo y guarda lo que hay
-                if "LÍMITE ALCANZADO" in str(e):
+                # Buffer o límite alcanzado — parar inmediatamente
+                if "BUFFER" in str(e) or "LÍMITE" in str(e):
                     print(f"\n{e}")
                     result["advertencia"] = str(e)
+                    # Salir de ambos bucles
+                    city = None
                     break
                 print(f"  ❌ {city}/{operation}: {e}")
                 result["ciudades"][city][operation] = {"error": str(e)}
 
-    # Resumen de peticiones usadas
+        if city is None:
+            break
+
     log = _load_log()
     month_key = datetime.now().strftime("%Y-%m")
     result["peticiones_usadas_este_mes"] = log.get(month_key, 0)
+    result["anuncios"]                   = all_rows
 
-    # Guardar lista plana de anuncios para cruzar con datos migratorios
-    result["anuncios"] = all_rows
     print(f"\n  ✅ Total anuncios procesados: {len(all_rows)}")
     print(f"  📊 Peticiones usadas este mes: {result['peticiones_usadas_este_mes']}/{MAX_MONTHLY}")
 
