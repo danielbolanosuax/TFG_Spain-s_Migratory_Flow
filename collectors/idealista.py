@@ -1,5 +1,5 @@
 # collectors/idealista.py
-# Colector de precios de vivienda via Idealista Property Search API v3.5
+# Colector de precios de vivienda vía Idealista Property Search API v3.5
 # Documentación: oauth2 + property-search-api-v3.5
 # Límite: 100 peticiones/mes — CRÍTICO respetar este límite
 #
@@ -13,24 +13,22 @@
 
 from __future__ import annotations
 
-import os
-import json
 import base64
+import json
+import os
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Any, Dict, List
 
 import requests
-from dotenv import load_dotenv 
-
+from dotenv import load_dotenv
 
 # ──────────────────────────────────────────────
-# PATHS BASE (robusto)
+# PATHS BASE
 # ──────────────────────────────────────────────
 
-# collectors/idealista.py → collectors/ → ROOT (proyecto)
-_HERE = Path(__file__).resolve().parent          # .../collectors
-ROOT = _HERE.parent                              # raíz del repo
+_HERE = Path(__file__).resolve().parent  # .../collectors
+ROOT = _HERE.parent                      # raíz del repo
 
 # Cargar variables desde .env en la raíz
 load_dotenv(ROOT / ".env")
@@ -40,20 +38,15 @@ REQUESTS_LOG = ROOT / "data" / "idealista_requests_log.json"
 MAX_MONTHLY = 100
 SAFETY_BUFFER = 20  # Nunca gastar las últimas 20 — reserva de emergencia
 
-
 # ──────────────────────────────────────────────
 # CREDENCIALES
 # ──────────────────────────────────────────────
 
-# No se ponen valores por defecto para evitar filtrar claves por error.
 API_KEY = os.getenv("IDEALISTA_API_KEY")
 SECRET = os.getenv("IDEALISTA_SECRET")
 
-if not API_KEY or not SECRET:
-    # Levantamos la excepción sólo cuando se use el colector; eso permite
-    # importar el módulo sin reventar los tests.
-    pass
-
+# No levantamos aquí: dejamos que sea get_token quien dispare el error
+# para poder importar el módulo sin romper tests.
 
 # ──────────────────────────────────────────────
 # CIUDADES OBJETIVO
@@ -71,38 +64,35 @@ CITIES: Dict[str, str] = {
 
 OPERATIONS = ["sale", "rent"]  # venta y alquiler
 
-
 # ──────────────────────────────────────────────
 # CONTROL DE PETICIONES
 # ──────────────────────────────────────────────
 
 def _load_log() -> Dict[str, int]:
     if REQUESTS_LOG.exists():
-        with open(REQUESTS_LOG, "r", encoding="utf-8") as f:
+        with REQUESTS_LOG.open("r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
-
 def _save_log(log: Dict[str, int]) -> None:
     REQUESTS_LOG.parent.mkdir(parents=True, exist_ok=True)
-    with open(REQUESTS_LOG, "w", encoding="utf-8") as f:
+    with REQUESTS_LOG.open("w", encoding="utf-8") as f:
         json.dump(log, f, indent=2)
-
 
 def _check_and_register_request(dry_run: bool = False, n: int = 1) -> int:
     """
     Verifica el límite mensual con buffer de seguridad.
 
     - dry_run=True → solo comprueba, NO registra ni gasta petición.
-    - n → número de peticiones que se quieren registrar (por defecto 1).
+    - n → número de peticiones a registrar (por defecto 1).
 
-    Lanza Exception si se supera el límite efectivo (MAX_MONTHLY - SAFETY_BUFFER).
+    Lanza RuntimeError si se supera el límite efectivo (MAX_MONTHLY - SAFETY_BUFFER).
     Devuelve el total acumulado tras el registro (o el valor actual en dry_run).
     """
     month_key = datetime.now().strftime("%Y-%m")
     log = _load_log()
     count = log.get(month_key, 0)
-    limite_efectivo = MAX_MONTHLY - SAFETY_BUFFER  # p.ej. 80 peticiones reales
+    limite_efectivo = MAX_MONTHLY - SAFETY_BUFFER
 
     if count + n > MAX_MONTHLY:
         raise RuntimeError(
@@ -124,7 +114,6 @@ def _check_and_register_request(dry_run: bool = False, n: int = 1) -> int:
         )
         return count
 
-    # Registrar
     log[month_key] = count + n
     _save_log(log)
     print(
@@ -132,7 +121,6 @@ def _check_and_register_request(dry_run: bool = False, n: int = 1) -> int:
         f"quedan {MAX_MONTHLY - count - n} (buffer={SAFETY_BUFFER})"
     )
     return count + n
-
 
 # ──────────────────────────────────────────────
 # AUTENTICACIÓN OAuth2
@@ -169,7 +157,6 @@ def get_token() -> str:
     except Exception as e:  # noqa: BLE001
         raise RuntimeError(f"Error obteniendo token de Idealista: {e}") from e
 
-
 # ──────────────────────────────────────────────
 # BÚSQUEDA
 # ──────────────────────────────────────────────
@@ -188,7 +175,6 @@ def search_properties(
     - operation: "sale" o "rent"
     - page: página (1, 2, ...)
     """
-    # Cada llamada cuenta como 1 petición
     _check_and_register_request(dry_run=dry_run, n=1)
 
     if dry_run:
@@ -197,7 +183,6 @@ def search_properties(
 
     url = "https://api.idealista.com/3.5/es/search"
     headers = {"Authorization": f"Bearer {token}"}
-    # multipart/form-data con requests → usar files, no data
     files = {
         "center": (None, center),
         "distance": (None, "15000"),
@@ -214,7 +199,6 @@ def search_properties(
         r.raise_for_status()
         return r.json()
     except requests.exceptions.HTTPError as e:
-        # Mostramos cuerpo recortado para debug
         body = ""
         try:
             body = r.text[:300]
@@ -223,7 +207,6 @@ def search_properties(
         return {"error": f"HTTP {r.status_code}: {body}", "exception": str(e)}
     except Exception as e:  # noqa: BLE001
         return {"error": str(e)}
-
 
 # ──────────────────────────────────────────────
 # PROCESADO
@@ -273,7 +256,6 @@ def _parse_elements(
         )
     return rows
 
-
 # ──────────────────────────────────────────────
 # FUNCIÓN PRINCIPAL
 # ──────────────────────────────────────────────
@@ -319,7 +301,6 @@ def collect_idealista(
         "anuncios": [],
     }
 
-    # Token (si no es dry_run)
     token: str | None
     if dry_run:
         token = None
@@ -341,26 +322,23 @@ def collect_idealista(
                 print(f"    · página {page}/{pages_per_segment}")
 
                 data = search_properties(
-                    token=token if token is not None else "",
+                    token=token or "",
                     center=center,
                     operation=operation,
                     page=page,
                     dry_run=dry_run,
                 )
 
-                # Dry run
                 if data.get("_dry_run"):
                     total_mercado = 0
                     continue
 
-                # Error HTTP u otro
                 if "error" in data:
                     print(f"    ❌ Error: {data['error']}")
                     result["ciudades"][city][operation] = {
                         "error": data["error"],
                         "dry_run": dry_run,
                     }
-                    # Saltamos al siguiente operation; no intentamos más páginas
                     ciudad_rows = []
                     break
 
@@ -370,14 +348,12 @@ def collect_idealista(
                 elements = data.get("elementList", []) or []
                 rows = _parse_elements(elements, city, operation, snapshot_date)
 
-                # Deduplicar por propertyCode
                 for r in rows:
                     code = r.get("propertyCode")
                     if code and code not in seen_codes:
                         seen_codes.add(code)
                         ciudad_rows.append(r)
 
-            # Si hubo error en alguna página ya hemos registrado error arriba
             if operation not in result["ciudades"][city]:
                 pm2_vals = [r["price_m2"] for r in ciudad_rows]
 
@@ -403,7 +379,6 @@ def collect_idealista(
 
     result["anuncios"] = all_rows
 
-    # Meter en el resultado cuántas peticiones lleva el mes
     log = _load_log()
     result["peticiones_usadas_este_mes"] = log.get(month_key, 0)
 
