@@ -10,19 +10,15 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
-
 
 VENV_PYTHON = ROOT / ".venv" / "bin" / "python"
 PYTHON = str(VENV_PYTHON) if VENV_PYTHON.exists() else sys.executable
 
-
 LOG_DIR = ROOT / "output" / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / f"trigger_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-
 
 # ─────────────────────────────────────────────────────────────
 # FASES DE NOTEBOOKS
@@ -54,7 +50,6 @@ FASES = {
     ],
 }
 
-
 # ─────────────────────────────────────────────────────────────
 # LOGGER
 # ─────────────────────────────────────────────────────────────
@@ -64,7 +59,6 @@ def log(msg: str):
     print(line)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(line + "\n")
-
 
 # ─────────────────────────────────────────────────────────────
 # RUNNER DE COMANDOS
@@ -80,23 +74,21 @@ def run_step(label: str, cmd: list) -> bool:
         log(result.stderr[-2000:])
         return False
 
-
 # ─────────────────────────────────────────────────────────────
 # PASO 1: RECOLECCIÓN DE DATOS
 # Incluye: economico, ambiental, conectividad, evr, idealista
 # ─────────────────────────────────────────────────────────────
 def save_json(categoria: str, datos: dict):
-    """Guarda el JSON de un collector en data/{categoria}/{año}/{mes}/{fecha}.json"""
-    fecha   = datetime.now().strftime("%d_%m_%Y")
-    anio    = datetime.now().strftime("%Y")
-    mes     = datetime.now().strftime("%m")
+    """Guarda el JSON de un collector en data/{categoria}/{año}/{mes}/{fecha}.json."""
+    fecha = datetime.now().strftime("%d_%m_%Y")
+    anio = datetime.now().strftime("%Y")
+    mes = datetime.now().strftime("%m")
     carpeta = ROOT / "data" / categoria / anio / mes
     carpeta.mkdir(parents=True, exist_ok=True)
     ruta = carpeta / f"{fecha}.json"
     with open(ruta, "w", encoding="utf-8") as f:
         json.dump(datos, f, ensure_ascii=False, indent=2)
     log(f"💾 Guardado: {ruta.relative_to(ROOT)}")
-
 
 def run_coleccion() -> bool:
     """
@@ -105,14 +97,16 @@ def run_coleccion() -> bool:
     """
     log("── PASO 1: Recolección de datos ──")
 
-    sys.path.insert(0, str(ROOT))
+    # Aseguramos que el ROOT está en sys.path para imports de collectors.*
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
 
     collectors = [
-        ("economico",   "collectors.economico",   "collect_economico",  "📈"),
-        ("ambiental",   "collectors.ambiental",   "collect_ambiental",  "🌿"),
-        ("conectividad","collectors.conectividad", "collect_conectividad","🔗"),
-        ("evr",         "collectors.evr",          "collect",            "🧭"),
-        ("idealista",   "collectors.idealista",    "collect_idealista",  "🏠"),
+        ("economico",    "collectors.economico",    "collect_economico",   "📈"),
+        ("ambiental",    "collectors.ambiental",    "collect_ambiental",   "🌿"),
+        ("conectividad", "collectors.conectividad", "collect_conectividad","🔗"),
+        ("evr",          "collectors.evr",          "collect",             "🧭"),
+        ("idealista",    "collectors.idealista",    "collect_idealista",   "🏠"),
     ]
 
     fallos = []
@@ -147,7 +141,6 @@ def run_coleccion() -> bool:
 
     return True
 
-
 # ─────────────────────────────────────────────────────────────
 # RUNNER DE NOTEBOOKS
 # ─────────────────────────────────────────────────────────────
@@ -155,7 +148,8 @@ def run_notebook(nb_path: str) -> bool:
     nb = ROOT / nb_path
     if not nb.exists():
         log(f"⚠️  Notebook no encontrado, saltando: {nb_path}")
-        return True   # No bloqueamos el pipeline por notebooks opcionales
+        # No bloqueamos el pipeline por notebooks opcionales
+        return True
     return run_step(
         nb.name,
         [
@@ -166,9 +160,8 @@ def run_notebook(nb_path: str) -> bool:
             "--ExecutePreprocessor.timeout=600",
             "--ExecutePreprocessor.kernel_name=python3",
             str(nb),
-        ]
+        ],
     )
-
 
 # ─────────────────────────────────────────────────────────────
 # FASE INSIGHTS
@@ -181,15 +174,18 @@ def run_insights() -> bool:
     log("── FASE: 05_insights ──")
     return run_step("run_insights.py", [PYTHON, str(script)])
 
-
 # ─────────────────────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────────────────────
 def main():
     import argparse
+
     parser = argparse.ArgumentParser()
-    parser.add_argument('--skip-collection', action='store_true',
-                        help='Salta el PASO 1 de recolección (no gasta peticiones)')
+    parser.add_argument(
+        "--skip-collection",
+        action="store_true",
+        help="Salta el PASO 1 de recolección (no gasta peticiones)",
+    )
     args = parser.parse_args()
 
     log("=" * 60)
@@ -202,7 +198,9 @@ def main():
     if args.skip_collection:
         log("⏭️  PASO 1 saltado (--skip-collection)")
     else:
-        if not run_scheduler_once():
+        # Antes llamaba a run_scheduler_once(), que no existe.
+        # Ahora usamos run_coleccion() para hacer la recolección integrada.
+        if not run_coleccion():
             log("🛑 Fallo en recolección. Abortando pipeline.")
             sys.exit(1)
 
@@ -240,7 +238,6 @@ def main():
             log(f"   ❌ {f}")
     log(f"📋 Log completo: {LOG_FILE}")
     log("=" * 60)
-
 
 if __name__ == "__main__":
     main()
