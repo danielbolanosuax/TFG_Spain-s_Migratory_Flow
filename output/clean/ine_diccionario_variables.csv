@@ -1,0 +1,25 @@
+Columna,Tipo,NaN,Ejemplo,Descripción
+cod_provincia,str,0,01,Código INE de provincia (2 dígitos)
+nombre_prov,str,0,Álava,Nombre de la provincia
+year,Int64,0,2015,Año de observación
+renta__media_de_la_renta_por_unidad_de_consumo,float64,11,20507.0,renta__media_de_la_renta_por_unidad_de_consumo
+renta__mediana_de_la_renta_por_unidad_de_consumo,float64,11,19250.0,Mediana de renta por unidad de consumo
+renta__renta_bruta_media_por_hogar,float64,11,39240.0,Renta bruta media (€) — mediana municipal
+renta__renta_bruta_media_por_persona,float64,11,17068.0,Renta bruta media (€) — mediana municipal
+renta__renta_neta_media_por_hogar,float64,0,31424.0,Renta neta media (€) — mediana municipal
+renta__renta_neta_media_por_persona,float64,0,13317.0,Renta neta media (€) — mediana municipal
+ingreso__fuente_de_ingreso_otras_prestaciones,float64,28,4.7,ingreso__fuente_de_ingreso_otras_prestaciones
+ingreso__fuente_de_ingreso_otros_ingresos,float64,7,14.3,ingreso__fuente_de_ingreso_otros_ingresos
+ingreso__fuente_de_ingreso_pensiones,float64,28,29.5,% hogares con pensiones como fuente principal
+ingreso__fuente_de_ingreso_prestaciones_por_desempleo,float64,28,3.9,% hogares con prestación por desempleo
+ingreso__fuente_de_ingreso_salario,float64,7,57.1,% hogares con salario como fuente principal
+desig__distribucion_de_la_renta_p80_p20,float64,11,2.5,Ratio P80/P20 (brecha ricos/pobres)
+desig__indice_de_gini,float64,11,30.4,"Índice de Gini (desigualdad, 0-100)"
+demog__edad_media_de_la_poblacion,float64,36,44.8,Edad media de la población
+demog__poblacion,float64,36,188.0,Población total o % española
+demog__porcentaje_de_hogares_unipersonales,float64,36,31.2,Tamaño medio del hogar o % hogares unipersonales
+demog__porcentaje_de_poblacion_de_65_y_mas_anos,float64,36,20.6,% población ≥65 años
+demog__porcentaje_de_poblacion_espanola,float64,36,94.5,Población total o % española
+demog__porcentaje_de_poblacion_menor_de_18_anos,float64,36,16.8,% población <18 años
+demog__tamano_medio_del_hogar,float64,36,2.4,Tamaño medio del hogar o % hogares unipersonales
+n_municipios_con_dato,int64,0,51,Nº de municipios con dato válido en la provincia
