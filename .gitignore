@@ -40,3 +40,12 @@ echo "!data/renta/**" >> .gitignore
 !data/renta_ine/**
 !data/fondo_monetario_internacional/
 !data/fondo_monetario_internacional/**
+
+
+# Datos pesados — no subir a GitHub
+output/clean/*.csv
+output/clean/*.parquet
+data/raw/*.csv
+data/raw/*.parquet
+data/processed/*.csv
+data/processed/*.parquet
